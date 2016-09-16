@@ -7,6 +7,9 @@ import javax.swing.JOptionPane;
 
 public class JanelaPrincipal extends javax.swing.JFrame {
    
+    JanelaPrincipal jp = new JanelaPrincipal();
+    JanelaSala js = new JanelaSala();
+    
     public JanelaPrincipal() {
      
         
@@ -20,8 +23,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         });
         
-        //--------------------------------------------------------------------
-        
         itemMenuReserva.addActionListener(new ActionListener() {            
             public void actionPerformed(ActionEvent ae) {
                 // Aqui abre a reserva
@@ -30,7 +31,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         
         itemMenuSala.addActionListener(new ActionListener() {            
             public void actionPerformed(ActionEvent ae) {
-                // Aqui abre a sala
+                // Aqui abre a sala                
+                jp.add(js);
+                js.setVisible(true);
+                
             }
         });
         

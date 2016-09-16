@@ -9,11 +9,14 @@ package br.unesc.reserva.view;
  *
  * @author Antônio
  */
-public class JanelaSala extends javax.swing.JFrame {
+public class JanelaSala extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form JanelaSala
      */
+    
+    JanelaInserirSala jis = new JanelaInserirSala();
+    
     public JanelaSala() {
         initComponents();
     }
@@ -53,12 +56,20 @@ public class JanelaSala extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabelaSalas);
 
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
         lblTitulo.setText("Salas");
 
         lblTituloTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblTituloTable.setForeground(new java.awt.Color(255, 255, 255));
         lblTituloTable.setText("Lista de salas cadastradas");
 
         btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
         btnInserir.setText("Inserir");
         btnInserir.addActionListener(new java.awt.event.ActionListener() {
@@ -92,7 +103,7 @@ public class JanelaSala extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(lblTituloTable)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,8 +130,12 @@ public class JanelaSala extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        // TODO add your handling code here:
+        jis.setVisible(true);
     }//GEN-LAST:event_btnInserirActionPerformed
+
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+        jis.setVisible(true);
+    }//GEN-LAST:event_btnEditarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
