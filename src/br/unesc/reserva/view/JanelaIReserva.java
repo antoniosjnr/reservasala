@@ -5,6 +5,8 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.ReservaAction;
+
 /**
  *
  * @author Antônio
@@ -12,8 +14,10 @@ package br.unesc.reserva.view;
 public class JanelaIReserva extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form JanelaSala
+     * Creates new form JanelaInserirSala
      */
+    
+    ReservaAction ra = new ReservaAction();
     
     public JanelaIReserva() {
         initComponents();
@@ -29,54 +33,91 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         painelFundo = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaSalas = new javax.swing.JTable();
         lblTitulo = new javax.swing.JLabel();
-        lblTituloTable = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
+        lblSala = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        cbxSala = new javax.swing.JComboBox();
+        lblResponsavel = new javax.swing.JLabel();
+        cbxResponsavel = new javax.swing.JComboBox();
+        lblData = new javax.swing.JLabel();
+        txtData = new javax.swing.JTextField();
+        lblHrini = new javax.swing.JLabel();
+        lblHrfim = new javax.swing.JLabel();
+        txtHrInicial = new javax.swing.JTextField();
+        txtHoraFinal = new javax.swing.JTextField();
+        lblPeriod = new javax.swing.JLabel();
+        cbxPeriodo = new javax.swing.JComboBox();
+        btnSalvar = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        btnInserir = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
+        btnFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         painelFundo.setBackground(new java.awt.Color(153, 153, 153));
 
-        tabelaSalas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tabelaSalas);
-
-        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("Reservas");
+        lblTitulo.setText("Cadastro Reserva");
 
-        lblTituloTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lblTituloTable.setForeground(new java.awt.Color(255, 255, 255));
-        lblTituloTable.setText("Lista de reservas cadastradas");
+        lblCodigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        lblCodigo.setText("Código");
+
+        lblSala.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblSala.setForeground(new java.awt.Color(255, 255, 255));
+        lblSala.setText("Sala");
+
+        cbxSala.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblResponsavel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblResponsavel.setForeground(new java.awt.Color(255, 255, 255));
+        lblResponsavel.setText("Responsável");
+
+        cbxResponsavel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        lblData.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblData.setForeground(new java.awt.Color(255, 255, 255));
+        lblData.setText("Data");
+
+        lblHrini.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblHrini.setForeground(new java.awt.Color(255, 255, 255));
+        lblHrini.setText("Hr. Inicial");
+
+        lblHrfim.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblHrfim.setForeground(new java.awt.Color(255, 255, 255));
+        lblHrfim.setText("Hr. Final");
+
+        lblPeriod.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblPeriod.setForeground(new java.awt.Color(255, 255, 255));
+        lblPeriod.setText("Período");
+
+        cbxPeriodo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Matutino", "Vespertino", "Noturno" }));
+
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(ra);
+        btnSalvar.setActionCommand("salvar");
+
+        btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(ra);
+        btnConsultar.setActionCommand("consultar");
 
         btnEditar.setText("Editar");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
-
-        btnInserir.setText("Inserir");
-        btnInserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInserirActionPerformed(evt);
-            }
-        });
+        btnEditar.addActionListener(ra);
+        btnEditar.setActionCommand("editar");
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(ra);
+        btnExcluir.setActionCommand("excluir");
+
+        btnFechar.setText("Fechar");
+        btnFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFecharActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
@@ -85,32 +126,86 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTitulo)
-                    .addComponent(lblTituloTable)
                     .addGroup(painelFundoLayout.createSequentialGroup()
-                        .addComponent(btnInserir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblCodigo)
+                            .addComponent(lblSala)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxSala, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblResponsavel)
+                            .addComponent(cbxResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(lblPeriod)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cbxPeriodo, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, painelFundoLayout.createSequentialGroup()
+                                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblData))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblHrini)
+                                    .addComponent(txtHrInicial, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblHrfim)
+                            .addComponent(txtHoraFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addComponent(btnSalvar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnConsultar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnExcluir)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFechar)))
+                .addContainerGap(66, Short.MAX_VALUE))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(lblTituloTable)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+            .addGroup(painelFundoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addComponent(lblResponsavel)
+                        .addGap(26, 26, 26))
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addComponent(lblTitulo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblCodigo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(15, 15, 15)
+                        .addComponent(lblSala)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(cbxSala, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cbxResponsavel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInserir)
+                    .addComponent(lblData)
+                    .addComponent(lblHrini)
+                    .addComponent(lblHrfim))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHrInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtHoraFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPeriod)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbxPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSalvar)
+                    .addComponent(btnExcluir)
                     .addComponent(btnEditar)
-                    .addComponent(btnExcluir))
-                .addGap(64, 64, 64))
+                    .addComponent(btnConsultar)
+                    .addComponent(btnFechar))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -127,23 +222,35 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-       
-    }//GEN-LAST:event_btnInserirActionPerformed
+    private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnFecharActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        
-    }//GEN-LAST:event_btnEditarActionPerformed
-
+    /**
+     * @param args the command line arguments
+     */    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnInserir;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton btnFechar;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JComboBox cbxPeriodo;
+    private javax.swing.JComboBox cbxResponsavel;
+    private javax.swing.JComboBox cbxSala;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblData;
+    private javax.swing.JLabel lblHrfim;
+    private javax.swing.JLabel lblHrini;
+    private javax.swing.JLabel lblPeriod;
+    private javax.swing.JLabel lblResponsavel;
+    private javax.swing.JLabel lblSala;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblTituloTable;
     private javax.swing.JPanel painelFundo;
-    private javax.swing.JTable tabelaSalas;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtData;
+    private javax.swing.JTextField txtHoraFinal;
+    private javax.swing.JTextField txtHrInicial;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -45,105 +45,281 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jScrollPane1" alignment="0" min="-2" pref="375" max="-2" attributes="0"/>
-                      <Component id="lblTitulo" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="lblTituloTable" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="lblTitulo" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblCodigo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblSala" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtCodigo" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Component id="cbxSala" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblResponsavel" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbxResponsavel" min="-2" pref="152" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="lblPeriod" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnInserir" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="cbxPeriodo" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtData" alignment="0" min="-2" pref="86" max="-2" attributes="0"/>
+                                      <Component id="lblData" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="lblHrini" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtHrInicial" pref="58" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblHrfim" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtHoraFinal" min="-2" pref="63" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="btnSalvar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnConsultar" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnEditar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="btnExcluir" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="btnFechar" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace pref="66" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
-                  <Component id="lblTituloTable" min="-2" max="-2" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jScrollPane1" min="-2" pref="95" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnInserir" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="lblResponsavel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="lblCodigo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txtCodigo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Component id="lblSala" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="cbxSala" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="cbxResponsavel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblHrini" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblHrfim" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="txtData" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHrInicial" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtHoraFinal" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="lblPeriod" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="cbxPeriodo" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnSalvar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnConsultar" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnFechar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="50" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
-          <AuxValues>
-            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-          </AuxValues>
-
-          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-          <SubComponents>
-            <Component class="javax.swing.JTable" name="tabelaSalas">
-              <Properties>
-                <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="4" rowCount="4">
-                    <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 4" type="java.lang.Object"/>
-                  </Table>
-                </Property>
-              </Properties>
-            </Component>
-          </SubComponents>
-        </Container>
         <Component class="javax.swing.JLabel" name="lblTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="24" style="1"/>
+              <Font name="Tahoma" size="18" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Reservas"/>
+            <Property name="text" type="java.lang.String" value="Cadastro Reserva"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTituloTable">
+        <Component class="javax.swing.JLabel" name="lblCodigo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="12" style="0"/>
+              <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Lista de reservas cadastradas"/>
+            <Property name="text" type="java.lang.String" value="C&#xf3;digo"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblSala">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Sala"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCodigo">
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbxSala">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblResponsavel">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Respons&#xe1;vel"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbxResponsavel">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="4">
+                <StringItem index="0" value="Item 1"/>
+                <StringItem index="1" value="Item 2"/>
+                <StringItem index="2" value="Item 3"/>
+                <StringItem index="3" value="Item 4"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblData">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Data"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtData">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblHrini">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Hr. Inicial"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblHrfim">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Hr. Final"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtHrInicial">
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtHoraFinal">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPeriod">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Per&#xed;odo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JComboBox" name="cbxPeriodo">
+          <Properties>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+              <StringArray count="3">
+                <StringItem index="0" value="Matutino"/>
+                <StringItem index="1" value="Vespertino"/>
+                <StringItem index="2" value="Noturno"/>
+              </StringArray>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnSalvar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Salvar"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnSalvar.addActionListener(ra);&#xd;&#xa;btnSalvar.setActionCommand(&quot;salvar&quot;);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnConsultar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Consultar"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnConsultar.addActionListener(ra);&#xd;&#xa;btnConsultar.setActionCommand(&quot;consultar&quot;);"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="btnEditar">
           <Properties>
             <Property name="text" type="java.lang.String" value="Editar"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditarActionPerformed"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JButton" name="btnInserir">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Inserir"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnInserirActionPerformed"/>
-          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnEditar.addActionListener(ra);&#xd;&#xa;btnEditar.setActionCommand(&quot;editar&quot;);"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="btnExcluir">
           <Properties>
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnExcluir.addActionListener(ra);&#xd;&#xa;btnExcluir.setActionCommand(&quot;excluir&quot;);"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnFechar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Fechar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFecharActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

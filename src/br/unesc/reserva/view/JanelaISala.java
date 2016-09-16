@@ -5,7 +5,7 @@
  */
 package br.unesc.reserva.view;
 
-import javax.swing.JDesktopPane;
+import br.unesc.reserva.modelo.SalaAction;
 
 /**
  *
@@ -14,14 +14,13 @@ import javax.swing.JDesktopPane;
 public class JanelaISala extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form JanelaSala
+     * Creates new form JanelaInserirSala
      */
     
-    JDesktopPane janelaPrincipal;
+    SalaAction sa = new SalaAction();
     
-    public JanelaISala(JDesktopPane janelaPrincipal) {
+    public JanelaISala() {
         initComponents();
-        this.janelaPrincipal = janelaPrincipal;
     }
 
     /**
@@ -34,54 +33,61 @@ public class JanelaISala extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         painelFundo = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaSalas = new javax.swing.JTable();
         lblTitulo = new javax.swing.JLabel();
-        lblTituloTable = new javax.swing.JLabel();
-        btnEditar = new javax.swing.JButton();
-        btnInserir = new javax.swing.JButton();
+        lblCodigo = new javax.swing.JLabel();
+        lblBloco = new javax.swing.JLabel();
+        lblAndar = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        txtBloco = new javax.swing.JTextField();
+        txtAndar = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
+        btnEditar = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
+        btnFechar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         painelFundo.setBackground(new java.awt.Color(153, 153, 153));
 
-        tabelaSalas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tabelaSalas);
-
-        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("Salas");
+        lblTitulo.setText("Cadastro Sala");
 
-        lblTituloTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lblTituloTable.setForeground(new java.awt.Color(255, 255, 255));
-        lblTituloTable.setText("Lista de salas cadastradas");
+        lblCodigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        lblCodigo.setText("Código");
 
-        btnEditar.setText("Editar");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
+        lblBloco.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblBloco.setForeground(new java.awt.Color(255, 255, 255));
+        lblBloco.setText("Bloco");
 
-        btnInserir.setText("Inserir");
-        btnInserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInserirActionPerformed(evt);
-            }
-        });
+        lblAndar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblAndar.setForeground(new java.awt.Color(255, 255, 255));
+        lblAndar.setText("Andar");
+
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(sa);
+        btnSalvar.setActionCommand("salvar");
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(sa);
+        btnExcluir.setActionCommand("excluir");
+
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(sa);
+        btnEditar.setActionCommand("editar");
+
+        btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(sa);
+        btnConsultar.setActionCommand("consultar");
+
+        btnFechar.setText("Fechar");
+        btnFechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFecharActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
@@ -90,32 +96,51 @@ public class JanelaISala extends javax.swing.JInternalFrame {
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTitulo)
-                    .addComponent(lblTituloTable)
+                    .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(lblTitulo)
+                        .addComponent(lblCodigo)
+                        .addComponent(lblAndar)
+                        .addComponent(lblBloco)
+                        .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtBloco)
+                        .addComponent(txtAndar, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE))
                     .addGroup(painelFundoLayout.createSequentialGroup()
-                        .addComponent(btnInserir)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btnSalvar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnConsultar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnEditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnExcluir)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFechar)))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+            .addGroup(painelFundoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(lblTituloTable)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCodigo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addComponent(lblBloco)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtBloco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblAndar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtAndar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInserir)
+                    .addComponent(btnSalvar)
+                    .addComponent(btnExcluir)
                     .addComponent(btnEditar)
-                    .addComponent(btnExcluir))
-                .addGap(64, 64, 64))
+                    .addComponent(btnConsultar)
+                    .addComponent(btnFechar))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -126,32 +151,33 @@ public class JanelaISala extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-        JanelaIInserirSala jis = new JanelaIInserirSala();
-        janelaPrincipal.add(jis);
-        jis.setVisible(true);
-    }//GEN-LAST:event_btnInserirActionPerformed
+    private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnFecharActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        JanelaIInserirSala jis = new JanelaIInserirSala();
-        jis.setVisible(true);        
-    }//GEN-LAST:event_btnEditarActionPerformed
-
+    /**
+     * @param args the command line arguments
+     */    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnInserir;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton btnFechar;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JLabel lblAndar;
+    private javax.swing.JLabel lblBloco;
+    private javax.swing.JLabel lblCodigo;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblTituloTable;
     private javax.swing.JPanel painelFundo;
-    private javax.swing.JTable tabelaSalas;
+    private javax.swing.JTextField txtAndar;
+    private javax.swing.JTextField txtBloco;
+    private javax.swing.JTextField txtCodigo;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,8 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.ResponsavelAction;
+
 /**
  *
  * @author Antônio
@@ -12,12 +14,15 @@ package br.unesc.reserva.view;
 public class JanelaIResponsavel extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form JanelaSala   */
+     * Creates new form JanelaInserirSala
+     */
     
+    ResponsavelAction ra = new ResponsavelAction();
+            
     public JanelaIResponsavel() {
         initComponents();
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,54 +33,73 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         painelFundo = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaSalas = new javax.swing.JTable();
         lblTitulo = new javax.swing.JLabel();
-        lblTituloTable = new javax.swing.JLabel();
+        lblCodigo = new javax.swing.JLabel();
+        lblCPF = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        txtCodigo = new javax.swing.JTextField();
+        txtCPF = new javax.swing.JTextField();
+        txtEmail = new javax.swing.JTextField();
+        lblNome = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        lblTelefone = new javax.swing.JLabel();
+        txtTelefone = new javax.swing.JTextField();
+        btnSalvar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        btnInserir = new javax.swing.JButton();
+        btnConsultar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
+        btnClose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         painelFundo.setBackground(new java.awt.Color(153, 153, 153));
 
-        tabelaSalas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tabelaSalas);
-
-        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("Responsáveis");
+        lblTitulo.setText("Cadastro Responsavel");
 
-        lblTituloTable.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        lblTituloTable.setForeground(new java.awt.Color(255, 255, 255));
-        lblTituloTable.setText("Lista de responsáveis cadastrados");
+        lblCodigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCodigo.setForeground(new java.awt.Color(255, 255, 255));
+        lblCodigo.setText("Código");
+
+        lblCPF.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblCPF.setForeground(new java.awt.Color(255, 255, 255));
+        lblCPF.setText("CPF");
+
+        lblEmail.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(255, 255, 255));
+        lblEmail.setText("E-mail");
+
+        lblNome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblNome.setForeground(new java.awt.Color(255, 255, 255));
+        lblNome.setText("Nome");
+
+        lblTelefone.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        lblTelefone.setForeground(new java.awt.Color(255, 255, 255));
+        lblTelefone.setText("Telefone");
+
+        btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(ra);
+        btnSalvar.setActionCommand("salvar");
 
         btnEditar.setText("Editar");
-        btnEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEditarActionPerformed(evt);
-            }
-        });
+        btnEditar.addActionListener(ra);
+        btnEditar.setActionCommand("editar");
 
-        btnInserir.setText("Inserir");
-        btnInserir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnInserirActionPerformed(evt);
-            }
-        });
+        btnConsultar.setText("Consultar");
+        btnConsultar.addActionListener(ra);
+        btnConsultar.setActionCommand("consultar");
 
         btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(ra);
+        btnExcluir.setActionCommand("excluir");
+
+        btnClose.setText("Fechar");
+        btnClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCloseActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
@@ -84,32 +108,73 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTitulo)
-                    .addComponent(lblTituloTable)
                     .addGroup(painelFundoLayout.createSequentialGroup()
-                        .addComponent(btnInserir)
+                        .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lblTitulo)
+                            .addComponent(lblCodigo)
+                            .addComponent(lblCPF)
+                            .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCPF))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnEditar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnExcluir)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                        .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(painelFundoLayout.createSequentialGroup()
+                                .addComponent(lblEmail)
+                                .addGap(0, 152, Short.MAX_VALUE))
+                            .addComponent(txtEmail)))
+                    .addComponent(txtNome)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNome)
+                            .addComponent(lblTelefone)
+                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(painelFundoLayout.createSequentialGroup()
+                                .addComponent(btnSalvar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnConsultar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnEditar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnExcluir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(btnClose)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+            .addGroup(painelFundoLayout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(lblTitulo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                .addComponent(lblTituloTable)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblCodigo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(15, 15, 15)
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addComponent(lblCPF)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addComponent(lblEmail)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNome)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTelefone)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnInserir)
+                    .addComponent(btnSalvar)
+                    .addComponent(btnExcluir)
                     .addComponent(btnEditar)
-                    .addComponent(btnExcluir))
-                .addGap(64, 64, 64))
+                    .addComponent(btnConsultar)
+                    .addComponent(btnClose))
+                .addGap(18, 18, 18))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -120,29 +185,39 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(painelFundo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
-    
-    }//GEN-LAST:event_btnInserirActionPerformed
+    private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_btnCloseActionPerformed
 
-    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-
-    }//GEN-LAST:event_btnEditarActionPerformed
-
+    /**
+     * @param args the command line arguments
+     */    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnClose;
+    private javax.swing.JButton btnConsultar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnInserir;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton btnSalvar;
+    private javax.swing.JLabel lblCPF;
+    private javax.swing.JLabel lblCodigo;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblNome;
+    private javax.swing.JLabel lblTelefone;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JLabel lblTituloTable;
     private javax.swing.JPanel painelFundo;
-    private javax.swing.JTable tabelaSalas;
+    private javax.swing.JTextField txtCPF;
+    private javax.swing.JTextField txtCodigo;
+    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtTelefone;
     // End of variables declaration//GEN-END:variables
 }

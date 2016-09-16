@@ -125,7 +125,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuSobreActionPerformed
 
     private void mnuSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalaActionPerformed
-        JanelaISala jis = new JanelaISala(painelFundo);
+        JanelaISala jis = new JanelaISala();
         painelFundo.add(jis);
         jis.setVisible(true);
     }//GEN-LAST:event_mnuSalaActionPerformed
