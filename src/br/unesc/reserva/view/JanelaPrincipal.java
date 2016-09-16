@@ -1,48 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.unesc.reserva.view;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
+/**
+ *
+ * @author Antônio
+ */
 public class JanelaPrincipal extends javax.swing.JFrame {
-   
-    JanelaPrincipal jp = new JanelaPrincipal();
-    JanelaSala js = new JanelaSala();
+
+    /**
+     * Creates new form JanelaPrincipal
+     */
     
     public JanelaPrincipal() {
-     
-        
         initComponents();
         
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
-        itemMenuSobre.addActionListener(new ActionListener() {            
-            public void actionPerformed(ActionEvent ae) {
-                JOptionPane.showMessageDialog(null, "Reserva v1.0", "Sobre", JOptionPane.INFORMATION_MESSAGE);
-            }
-        });
-        
-        itemMenuReserva.addActionListener(new ActionListener() {            
-            public void actionPerformed(ActionEvent ae) {
-                // Aqui abre a reserva
-            }
-        });
-        
-        itemMenuSala.addActionListener(new ActionListener() {            
-            public void actionPerformed(ActionEvent ae) {
-                // Aqui abre a sala                
-                jp.add(js);
-                js.setVisible(true);
-                
-            }
-        });
-        
-        itemMenuResponsavel.addActionListener(new ActionListener() {            
-            public void actionPerformed(ActionEvent ae) {
-                // Aqui abre o responsável
-            }
-        });
+    }
+    
+    public JDesktopPane getPainelDesk(){
+        return painelFundo;
     }
 
     /**
@@ -54,18 +40,16 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        painelFundo = new javax.swing.JPanel();
-        menuBar = new javax.swing.JMenuBar();
-        menuCadastros = new javax.swing.JMenu();
-        itemMenuReserva = new javax.swing.JMenuItem();
-        itemMenuSala = new javax.swing.JMenuItem();
-        itemSair = new javax.swing.JMenuItem();
-        itemMenuResponsavel = new javax.swing.JMenuItem();
-        menuSobre = new javax.swing.JMenu();
-        itemMenuSobre = new javax.swing.JMenuItem();
+        painelFundo = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        mnuCadastros = new javax.swing.JMenu();
+        mnuSala = new javax.swing.JMenuItem();
+        mnuResponsavel = new javax.swing.JMenuItem();
+        mnuReserva = new javax.swing.JMenuItem();
+        mnuSobrePai = new javax.swing.JMenu();
+        mnuSobre = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         painelFundo.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -80,74 +64,92 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             .addGap(0, 279, Short.MAX_VALUE)
         );
 
-        menuCadastros.setText("Cadastros");
+        mnuCadastros.setText("Cadastros");
 
-        itemMenuReserva.setText("Reserva");
-        menuCadastros.add(itemMenuReserva);
-
-        itemMenuSala.setText("Sala");
-        menuCadastros.add(itemMenuSala);
-
-        itemMenuResponsavel.setText("Responsável");
-        menuCadastros.add(itemMenuResponsavel);
-        
-        itemSair.setText("Sair");
-        itemSair.addActionListener(new java.awt.event.ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-              System.exit(0);
-              
-            }
-        });
-        menuCadastros.add(itemSair);
-        
-        menuBar.add(menuCadastros);
-
-        menuSobre.setText("Sobre");
-        menuSobre.addActionListener(new java.awt.event.ActionListener() {
+        mnuSala.setText("Sala");
+        mnuSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menuSobreActionPerformed(evt);
+                mnuSalaActionPerformed(evt);
             }
         });
-              
-        itemMenuSobre.setText("Sobre");
-        menuSobre.add(itemMenuSobre);
+        mnuCadastros.add(mnuSala);
 
-        menuBar.add(menuSobre);
+        mnuResponsavel.setText("Responsável");
+        mnuResponsavel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuResponsavelActionPerformed(evt);
+            }
+        });
+        mnuCadastros.add(mnuResponsavel);
 
-        setJMenuBar(menuBar);
+        mnuReserva.setText("Reserva");
+        mnuReserva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuReservaActionPerformed(evt);
+            }
+        });
+        mnuCadastros.add(mnuReserva);
+
+        jMenuBar1.add(mnuCadastros);
+
+        mnuSobrePai.setText("Sobre");
+
+        mnuSobre.setText("Sobre");
+        mnuSobre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuSobreActionPerformed(evt);
+            }
+        });
+        mnuSobrePai.add(mnuSobre);
+
+        jMenuBar1.add(mnuSobrePai);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelFundo)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(painelFundo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(painelFundo)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuSobreActionPerformed
-        
-    }//GEN-LAST:event_menuSobreActionPerformed
+    private void mnuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSobreActionPerformed
+        JOptionPane.showMessageDialog(this,"Reserva Salas v1.0","Reserva",JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_mnuSobreActionPerformed
+
+    private void mnuSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalaActionPerformed
+        JanelaISala jis = new JanelaISala(painelFundo);
+        painelFundo.add(jis);
+        jis.setVisible(true);
+    }//GEN-LAST:event_mnuSalaActionPerformed
+
+    private void mnuResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuResponsavelActionPerformed
+        JanelaIResponsavel jir = new JanelaIResponsavel();
+        painelFundo.add(jir);
+        jir.setVisible(true);
+    }//GEN-LAST:event_mnuResponsavelActionPerformed
+
+    private void mnuReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReservaActionPerformed
+        JanelaIReserva jir = new JanelaIReserva();
+        painelFundo.add(jir);
+        jir.setVisible(true);
+    }//GEN-LAST:event_mnuReservaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem itemMenuReserva;
-    private javax.swing.JMenuItem itemMenuResponsavel;
-    private javax.swing.JMenuItem itemMenuSala;
-    private javax.swing.JMenuItem itemMenuSobre;
-    private javax.swing.JMenuItem itemSair;
-    
-    private javax.swing.JMenuBar menuBar;
-    
-    private javax.swing.JMenu menuCadastros;
-    private javax.swing.JMenu menuSobre;
-    
-    private javax.swing.JPanel painelFundo;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu mnuCadastros;
+    private javax.swing.JMenuItem mnuReserva;
+    private javax.swing.JMenuItem mnuResponsavel;
+    private javax.swing.JMenuItem mnuSala;
+    private javax.swing.JMenuItem mnuSobre;
+    private javax.swing.JMenu mnuSobrePai;
+    private javax.swing.JDesktopPane painelFundo;
     // End of variables declaration//GEN-END:variables
 }

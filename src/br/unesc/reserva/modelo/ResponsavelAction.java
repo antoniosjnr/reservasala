@@ -3,7 +3,7 @@ package br.unesc.reserva.modelo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ReservaAction implements ActionListener{
+public class ResponsavelAction implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -5,20 +5,23 @@
  */
 package br.unesc.reserva.view;
 
+import javax.swing.JDesktopPane;
+
 /**
  *
  * @author Antônio
  */
-public class JanelaSala extends javax.swing.JInternalFrame {
+public class JanelaISala extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form JanelaSala
      */
     
-    JanelaInserirSala jis = new JanelaInserirSala();
+    JDesktopPane janelaPrincipal;
     
-    public JanelaSala() {
+    public JanelaISala(JDesktopPane janelaPrincipal) {
         initComponents();
+        this.janelaPrincipal = janelaPrincipal;
     }
 
     /**
@@ -39,7 +42,7 @@ public class JanelaSala extends javax.swing.JInternalFrame {
         btnInserir = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         painelFundo.setBackground(new java.awt.Color(153, 153, 153));
 
@@ -130,11 +133,14 @@ public class JanelaSala extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserirActionPerformed
+        JanelaIInserirSala jis = new JanelaIInserirSala();
+        janelaPrincipal.add(jis);
         jis.setVisible(true);
     }//GEN-LAST:event_btnInserirActionPerformed
 
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
-        jis.setVisible(true);
+        JanelaIInserirSala jis = new JanelaIInserirSala();
+        jis.setVisible(true);        
     }//GEN-LAST:event_btnEditarActionPerformed
 
 

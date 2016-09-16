@@ -9,12 +9,12 @@ package br.unesc.reserva.view;
  *
  * @author Antônio
  */
-public class JanelaInserirSala extends javax.swing.JFrame {
+public class JanelaIInserirSala extends javax.swing.JFrame {
 
     /**
      * Creates new form JanelaInserirSala
      */
-    public JanelaInserirSala() {
+    public JanelaIInserirSala() {
         initComponents();
     }
 
