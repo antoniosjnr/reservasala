@@ -3,9 +3,9 @@ package br.unesc.reserva.modelo;
 
 public class Sala {
 
-    int codigo;
-    char bloco;
-    int andar;
+    private int codigo;
+    private String bloco;
+    private int andar;
 
     public int getCodigo() {
         return codigo;
@@ -15,11 +15,11 @@ public class Sala {
         this.codigo = codigo;
     }
 
-    public char getBloco() {
+    public String getBloco() {
         return bloco;
     }
 
-    public void setBloco(char bloco) {
+    public void setBloco(String bloco) {
         this.bloco = bloco;
     }
 

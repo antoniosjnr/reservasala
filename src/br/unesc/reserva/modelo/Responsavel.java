@@ -2,6 +2,12 @@ package br.unesc.reserva.modelo;
 
 public class Responsavel {
 
+    private int codigo;
+    private int CPF;
+    private String email;
+    private String nome;
+    private int telefone;
+
     public int getCodigo() {
         return codigo;
     }
@@ -19,11 +25,11 @@ public class Responsavel {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String Email) {
-        this.Email = Email;
+        this.email = Email;
     }
 
     public String getNome() {
@@ -41,10 +47,5 @@ public class Responsavel {
     public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
-    int codigo;
-    int CPF;
-    String Email;
-    String nome;
-    int telefone;
- 
+
 }

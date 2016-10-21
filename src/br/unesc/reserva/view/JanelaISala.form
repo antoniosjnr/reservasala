@@ -156,7 +156,7 @@
             <Property name="text" type="java.lang.String" value="Salvar"/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnSalvar.addActionListener(sa);&#xd;&#xa;btnSalvar.setActionCommand(&quot;salvar&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnSalvar.addActionListener(salaAction);&#xa;btnSalvar.setActionCommand(&quot;salvar&quot;);"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="btnExcluir">
@@ -164,7 +164,7 @@
             <Property name="text" type="java.lang.String" value="Excluir"/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnExcluir.addActionListener(sa);&#xd;&#xa;btnExcluir.setActionCommand(&quot;excluir&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnExcluir.addActionListener(salaAction);&#xa;btnExcluir.setActionCommand(&quot;excluir&quot;);"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="btnEditar">
@@ -172,7 +172,7 @@
             <Property name="text" type="java.lang.String" value="Editar"/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnEditar.addActionListener(sa);&#xd;&#xa;btnEditar.setActionCommand(&quot;editar&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnEditar.addActionListener(salaAction);&#xa;btnEditar.setActionCommand(&quot;editar&quot;);"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="btnConsultar">
@@ -180,7 +180,7 @@
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
           <AuxValues>
-            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnConsultar.addActionListener(sa);&#xd;&#xa;btnConsultar.setActionCommand(&quot;consultar&quot;);"/>
+            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="btnConsultar.addActionListener(salaAction);&#xa;btnConsultar.setActionCommand(&quot;consultar&quot;);"/>
           </AuxValues>
         </Component>
         <Component class="javax.swing.JButton" name="btnFechar">

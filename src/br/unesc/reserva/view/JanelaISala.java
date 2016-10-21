@@ -5,6 +5,7 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.Sala;
 import br.unesc.reserva.modelo.SalaAction;
 
 /**
@@ -16,8 +17,15 @@ public class JanelaISala extends javax.swing.JInternalFrame {
     /**
      * Creates new form JanelaInserirSala
      */
+     
     
-    SalaAction sa = new SalaAction();
+    //TODO: naõ precisa destas variáveis
+    private int codigo = 0;
+    private String bloco = "";
+    private int andar = 0;
+    
+    private SalaAction salaAction = new SalaAction(this);
+    
     
     public JanelaISala() {
         initComponents();
@@ -67,19 +75,19 @@ public class JanelaISala extends javax.swing.JInternalFrame {
         lblAndar.setText("Andar");
 
         btnSalvar.setText("Salvar");
-        btnSalvar.addActionListener(sa);
+        btnSalvar.addActionListener(salaAction);
         btnSalvar.setActionCommand("salvar");
 
         btnExcluir.setText("Excluir");
-        btnExcluir.addActionListener(sa);
+        btnExcluir.addActionListener(salaAction);
         btnExcluir.setActionCommand("excluir");
 
         btnEditar.setText("Editar");
-        btnEditar.addActionListener(sa);
+        btnEditar.addActionListener(salaAction);
         btnEditar.setActionCommand("editar");
 
         btnConsultar.setText("Consultar");
-        btnConsultar.addActionListener(sa);
+        btnConsultar.addActionListener(salaAction);
         btnConsultar.setActionCommand("consultar");
 
         btnFechar.setText("Fechar");
@@ -158,10 +166,17 @@ public class JanelaISala extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
-        this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
 
+
+    public Sala getSala(){
+        Sala sala = new Sala();
+        sala.setBloco(txtBloco.getText());
+        
+        return sala;
+    }
+    
     /**
      * @param args the command line arguments
      */    

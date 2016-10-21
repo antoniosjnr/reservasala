@@ -3,13 +3,13 @@ package br.unesc.reserva.modelo;
 import java.util.Date;
 
 public class Reservas {
-    int codigo;
-    int id_sala;
-    int id_responsavel;
-    Date data;
-    float horainicial;
-    float horaFinal;
-    String periodo;
+    private int codigo;
+    private int idSala;
+    private int idResponsavel;
+    private Date data;
+    private float horainicial;
+    private float horaFinal;
+    private String periodo;
 
     public int getCodigo() {
         return codigo;
@@ -19,20 +19,20 @@ public class Reservas {
         this.codigo = codigo;
     }
 
-    public int getId_sala() {
-        return id_sala;
+    public int getIdSala() {
+        return idSala;
     }
 
-    public void setId_sala(int id_sala) {
-        this.id_sala = id_sala;
+    public void setIdSala(int idSala) {
+        this.idSala = idSala;
     }
 
-    public int getId_responsavel() {
-        return id_responsavel;
+    public int getIdResponsavel() {
+        return idResponsavel;
     }
 
-    public void setId_responsavel(int id_responsavel) {
-        this.id_responsavel = id_responsavel;
+    public void setIdResponsavel(int idResponsavel) {
+        this.idResponsavel = idResponsavel;
     }
 
     public Date getData() {
@@ -66,7 +66,5 @@ public class Reservas {
     public void setPeriodo(String periodo) {
         this.periodo = periodo;
     }
-    
-    
 
 }

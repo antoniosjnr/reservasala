@@ -18,15 +18,14 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form JanelaPrincipal
      */
-    
     private JanelaISala jis = new JanelaISala();
     private JanelaIResponsavel jire = new JanelaIResponsavel();
     private JanelaIReserva jirs = new JanelaIReserva();
-    
+
     public JanelaPrincipal() {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        
+
     }
 
     public JDesktopPane getPainelDesk() {
@@ -127,26 +126,23 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnuSobreActionPerformed
 
     private void mnuSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalaActionPerformed
+        painelFundo.remove(jis);
         painelFundo.add(jis);
-        if (!jis.isVisible()) {
-            jis.setVisible(true);
-        }
+        jis.setVisible(true);
+
     }//GEN-LAST:event_mnuSalaActionPerformed
 
     private void mnuResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuResponsavelActionPerformed
+        painelFundo.remove(jire);
         painelFundo.add(jire);
-        if (!jire.isVisible()) {
-            jire.setVisible(true);
-        }
+        jire.setVisible(true);
 
     }//GEN-LAST:event_mnuResponsavelActionPerformed
 
     private void mnuReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReservaActionPerformed
-        
+        painelFundo.remove(jirs);
         painelFundo.add(jirs);
-        if (!jirs.isVisible()) {
-            jirs.setVisible(true);
-        }
+        jirs.setVisible(true);
 
     }//GEN-LAST:event_mnuReservaActionPerformed
 
