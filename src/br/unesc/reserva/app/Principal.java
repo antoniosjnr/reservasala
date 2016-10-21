@@ -9,7 +9,7 @@ public class Principal {
         JanelaLogin janelaLogin = new JanelaLogin();
         janelaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaLogin.setVisible(true);
-        System.out.println("Teste");
+        
     }
     
 }
