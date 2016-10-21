@@ -101,6 +101,7 @@ public class JanelaLogin extends javax.swing.JFrame {
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         JanelaPrincipal jp = new JanelaPrincipal();
         jp.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnEntrarActionPerformed
  
     // Variables declaration - do not modify//GEN-BEGIN:variables

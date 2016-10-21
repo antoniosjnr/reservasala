@@ -8,7 +8,6 @@ package br.unesc.reserva.view;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 /**
  *
@@ -20,14 +19,17 @@ public class JanelaPrincipal extends javax.swing.JFrame {
      * Creates new form JanelaPrincipal
      */
     
+    private JanelaISala jis = new JanelaISala();
+    private JanelaIResponsavel jire = new JanelaIResponsavel();
+    private JanelaIReserva jirs = new JanelaIReserva();
+    
     public JanelaPrincipal() {
         initComponents();
-        
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         
     }
-    
-    public JDesktopPane getPainelDesk(){
+
+    public JDesktopPane getPainelDesk() {
         return painelFundo;
     }
 
@@ -121,25 +123,31 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void mnuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSobreActionPerformed
-        JOptionPane.showMessageDialog(this,"Reserva Salas v1.0","Reserva",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this, "Reserva Salas v1.0", "Reserva", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_mnuSobreActionPerformed
 
     private void mnuSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalaActionPerformed
-        JanelaISala jis = new JanelaISala();
         painelFundo.add(jis);
-        jis.setVisible(true);
+        if (!jis.isVisible()) {
+            jis.setVisible(true);
+        }
     }//GEN-LAST:event_mnuSalaActionPerformed
 
     private void mnuResponsavelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuResponsavelActionPerformed
-        JanelaIResponsavel jir = new JanelaIResponsavel();
-        painelFundo.add(jir);
-        jir.setVisible(true);
+        painelFundo.add(jire);
+        if (!jire.isVisible()) {
+            jire.setVisible(true);
+        }
+
     }//GEN-LAST:event_mnuResponsavelActionPerformed
 
     private void mnuReservaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuReservaActionPerformed
-        JanelaIReserva jir = new JanelaIReserva();
-        painelFundo.add(jir);
-        jir.setVisible(true);
+        
+        painelFundo.add(jirs);
+        if (!jirs.isVisible()) {
+            jirs.setVisible(true);
+        }
+
     }//GEN-LAST:event_mnuReservaActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
