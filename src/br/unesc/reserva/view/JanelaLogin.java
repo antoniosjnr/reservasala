@@ -6,21 +6,32 @@
 package br.unesc.reserva.view;
 
 import br.unesc.reserva.modelo.Generics;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.PlainDocument;
 
 /**
  *
- * @author Antônio
+ * @author Antônio , Jefferson
  */
 public class JanelaLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form JanelaLogin
      */
+    String x = System.getProperty("user.name");
+    String local = "C:\\Users\\"+x+"\\Documents\\NetBeansProjects\\reservasala\\USUARIO.txt";
+    String usuario;
+
     public JanelaLogin() {
-        initComponents();
+        analizar();
     }
 
     /**
@@ -47,9 +58,21 @@ public class JanelaLogin extends javax.swing.JFrame {
         lblLogin.setForeground(new java.awt.Color(255, 255, 255));
         lblLogin.setText("Login");
 
+        txtLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtLoginActionPerformed(evt);
+            }
+        });
+
         lblSenha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblSenha.setForeground(new java.awt.Color(255, 255, 255));
         lblSenha.setText("Senha");
+
+        txtSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSenhaActionPerformed(evt);
+            }
+        });
 
         btnEntrar.setText("Entrar");
         btnEntrar.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +126,51 @@ public class JanelaLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void analizar() {
+
+        File arquivo = new File(local);
+       
+        if (arquivo.exists()) {
+            try {
+                System.out.println("existe");
+
+                BufferedReader arq = new BufferedReader(new FileReader(local));
+                usuario = arq.readLine();
+                arq.close();
+                initComponents();
+                this.txtLogin.setText(usuario);
+                this.txtLogin.setEditable(true);
+            } 
+            catch (Exception erro) {
+                JOptionPane.showMessageDialog(null, "Erro" + erro.getMessage());
+            }
+        }
+        else
+        {
+            initComponents();
+            this.txtLogin.setDocument(new teclasPermitidas());             
+        }
+        
+    }
+
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
+        
+        if (evt.getSource() == btnEntrar) {
+
+            File arquivo = new File("USUARIO.txt");
+            
+            String caminho = arquivo.getAbsolutePath();
+            //ESCREVE O LOGIN           
+                try {
+                    PrintWriter arq = new PrintWriter(caminho);
+                    arq.println(txtLogin.getText());
+                    arq.close();
+                    System.out.println("Escrveu no arquivo");
+                } catch (Exception ex) {
+                    System.out.println("Nao escrveu no arquivo \nErro: " + ex);
+                }
+           }
+        
         JanelaPrincipal jp = new JanelaPrincipal();
         jp.setVisible(true);
         this.dispose();
@@ -113,6 +180,25 @@ public class JanelaLogin extends javax.swing.JFrame {
             Logger.getLogger(JanelaLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    public class teclasPermitidas extends PlainDocument{
+        public void inserString(int offset, String str,javax.swing.text.AttributeSet attr)
+            throws BadLocationException{
+            super.insertString(offset, str.replaceAll("[^a-z|^A-Z]",""), attr);
+       }
+        public void replace(int offset, String str,javax.swing.text.AttributeSet attr)
+            throws BadLocationException{
+            super.insertString(offset, str.replaceAll("[^a-z|^A-Z]",""), attr);
+     }
+    }
+    
+    private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
+      
+    }//GEN-LAST:event_txtLoginActionPerformed
+
+    private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSenhaActionPerformed
  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEntrar;
