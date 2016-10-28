@@ -10,6 +10,7 @@ public class Principal {
         janelaLogin.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         janelaLogin.setVisible(true);
         
+        
     }
     
 }
