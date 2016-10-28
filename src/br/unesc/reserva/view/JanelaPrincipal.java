@@ -5,6 +5,10 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.Generics;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -21,11 +25,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
     private JanelaISala jis = new JanelaISala();
     private JanelaIResponsavel jire = new JanelaIResponsavel();
     private JanelaIReserva jirs = new JanelaIReserva();
+    
+    String usuario = null;
 
-    public JanelaPrincipal() {
+    public JanelaPrincipal() throws IOException {
         initComponents();
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-
+        usuario = Generics.getUsuario();
     }
 
     public JDesktopPane getPainelDesk() {
@@ -123,12 +129,23 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
     private void mnuSobreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSobreActionPerformed
         JOptionPane.showMessageDialog(this, "Reserva Salas v1.0", "Reserva", JOptionPane.INFORMATION_MESSAGE);
+
+        try {
+            Generics.GerarLog("Abriu a tela Sobre", usuario);
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_mnuSobreActionPerformed
 
     private void mnuSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuSalaActionPerformed
         painelFundo.remove(jis);
         painelFundo.add(jis);
         jis.setVisible(true);
+        try {
+            Generics.GerarLog("Abriu a tela de Salas", usuario);
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_mnuSalaActionPerformed
 
@@ -136,6 +153,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         painelFundo.remove(jire);
         painelFundo.add(jire);
         jire.setVisible(true);
+        try {
+            Generics.GerarLog("Abriu a tela de Responsáveis", usuario);
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_mnuResponsavelActionPerformed
 
@@ -143,6 +165,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         painelFundo.remove(jirs);
         painelFundo.add(jirs);
         jirs.setVisible(true);
+        try {
+            Generics.GerarLog("Abriu a tela de Reserva", usuario);
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
     }//GEN-LAST:event_mnuReservaActionPerformed
 
