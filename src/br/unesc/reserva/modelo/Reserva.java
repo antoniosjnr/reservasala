@@ -2,17 +2,15 @@ package br.unesc.reserva.modelo;
 
 import java.util.Date;
 
-public class Reservas {
+public class Reserva {
     private int codigo;
     private int idSala;
     private int idResponsavel;
     private Date data;
-    private float horainicial;
-    private float horaFinal;
     private String periodo;
 
     public int getCodigo() {
-        return codigo;
+        return codigo;        
     }
 
     public void setCodigo(int codigo) {
@@ -41,22 +39,6 @@ public class Reservas {
 
     public void setData(Date data) {
         this.data = data;
-    }
-
-    public float getHorainicial() {
-        return horainicial;
-    }
-
-    public void setHorainicial(float horainicial) {
-        this.horainicial = horainicial;
-    }
-
-    public float getHoraFinal() {
-        return horaFinal;
-    }
-
-    public void setHoraFinal(float horaFinal) {
-        this.horaFinal = horaFinal;
     }
 
     public String getPeriodo() {

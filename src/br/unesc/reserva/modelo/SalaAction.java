@@ -17,7 +17,8 @@ public class SalaAction implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         
-        if("salvar".equals(e.getActionCommand())){            
+        if("salvar".equals(e.getActionCommand())){
+            // inicialização dos componentes
             Sala s = frame.getSala();
         }
         

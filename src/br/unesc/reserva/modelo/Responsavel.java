@@ -3,10 +3,10 @@ package br.unesc.reserva.modelo;
 public class Responsavel {
 
     private int codigo;
-    private int CPF;
+    private String CPF;
     private String email;
     private String nome;
-    private int telefone;
+    private String telefone;
 
     public int getCodigo() {
         return codigo;
@@ -16,11 +16,11 @@ public class Responsavel {
         this.codigo = codigo;
     }
 
-    public int getCPF() {
+    public String getCPF() {
         return CPF;
     }
 
-    public void setCPF(int CPF) {
+    public void setCPF(String CPF) {
         this.CPF = CPF;
     }
 
@@ -40,11 +40,11 @@ public class Responsavel {
         this.nome = nome;
     }
 
-    public int getTelefone() {
+    public String getTelefone() {
         return telefone;
     }
 
-    public void setTelefone(int telefone) {
+    public void setTelefone(String telefone) {
         this.telefone = telefone;
     }
 

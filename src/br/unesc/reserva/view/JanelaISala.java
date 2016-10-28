@@ -173,6 +173,8 @@ public class JanelaISala extends javax.swing.JInternalFrame {
     public Sala getSala(){
         Sala sala = new Sala();
         sala.setBloco(txtBloco.getText());
+        sala.setAndar(Integer.parseInt(txtAndar.getText()));
+        sala.setCodigo(Integer.parseInt(txtAndar.getText()));
         
         return sala;
     }

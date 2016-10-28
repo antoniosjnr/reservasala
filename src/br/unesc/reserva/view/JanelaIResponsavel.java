@@ -5,6 +5,7 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.Responsavel;
 import br.unesc.reserva.modelo.ResponsavelAction;
 
 /**
@@ -17,7 +18,7 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
      * Creates new form JanelaInserirSala
      */
     
-    ResponsavelAction ra = new ResponsavelAction();
+    ResponsavelAction ra = new ResponsavelAction(this);
             
     public JanelaIResponsavel() {
         initComponents();
@@ -196,7 +197,17 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCloseActionPerformed
-
+    
+    public Responsavel getResponsavel(){
+        Responsavel responsavel = new Responsavel();
+        responsavel.setCPF(txtCPF.getText());
+        responsavel.setCodigo(Integer.parseInt(txtCodigo.getText()));
+        responsavel.setEmail(txtEmail.getText());
+        responsavel.setNome(txtNome.getText());
+        responsavel.setTelefone(txtTelefone.getText());
+        
+        return responsavel;
+    }
     /**
      * @param args the command line arguments
      */    
