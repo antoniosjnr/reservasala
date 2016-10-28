@@ -5,6 +5,11 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.Generics;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Antônio
@@ -102,6 +107,11 @@ public class JanelaLogin extends javax.swing.JFrame {
         JanelaPrincipal jp = new JanelaPrincipal();
         jp.setVisible(true);
         this.dispose();
+        try {
+            Generics.GerarLog("Entrou no sistema","");
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnEntrarActionPerformed
  
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -5,6 +5,7 @@ import java.util.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import sun.nio.cs.ext.Johab;
 
 public class Generics {
 
@@ -22,11 +23,27 @@ public class Generics {
         return date;
     }
 
-    public void GerarLog(String mensagem) {
+    public static void GerarLog(String mensagem, String login) throws IOException {
 
-        String local = "../src/log/log.txt";
+        String local = "..\\src\\Logs\\log.txt";
+        
+        new File(local).mkdirs();
+        
+        BufferedWriter bufferedWriter = null;
 
-        File arquivoLog = new File(local);
+        try {
+            FileWriter fileWriter = new FileWriter(local, true);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            String data = (new java.util.Date()).toString();
+            String msg = data + " - " + login + " : " + mensagem + "\n";
+            bufferedWriter.write(msg);
+        } catch (Exception ex) {
+            //JOptionPane.showMessageDialog(null,"");                    
+
+        } finally {
+            bufferedWriter.flush();
+            bufferedWriter.close();
+        }
 
     }
 }
