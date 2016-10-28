@@ -3,6 +3,8 @@ package br.unesc.reserva.modelo;
 import br.unesc.reserva.view.JanelaIReserva;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class ReservaAction implements ActionListener{
@@ -17,11 +19,19 @@ public class ReservaAction implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         
         if("salvar".equals(e.getActionCommand())){
-            Reserva r = frame.getReserva();
+            try {
+                Reserva r = frame.getReserva();
+            } catch (Exception ex) {
+                Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
         if("editar".equals(e.getActionCommand())){
-            Reserva r = frame.getReserva();
+            try {
+                Reserva r = frame.getReserva();
+            } catch (Exception ex) {
+                Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
         if("excluir".equals(e.getActionCommand())){
