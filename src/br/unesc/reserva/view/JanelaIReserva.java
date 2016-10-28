@@ -5,6 +5,7 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.Generics;
 import br.unesc.reserva.modelo.Reserva;
 import br.unesc.reserva.modelo.ReservaAction;
 
@@ -17,7 +18,7 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
     /**
      * Creates new form JanelaInserirSala
      */
-    ReservaAction ra = new ReservaAction();
+    ReservaAction ra = new ReservaAction(this);
 
     public JanelaIReserva() {
         initComponents();
@@ -204,10 +205,10 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
-    public Reserva getReserva() {
+    public Reserva getReserva() throws Exception {
         Reserva reserva = new Reserva();
         reserva.setCodigo(Integer.parseInt(txtCodigo.getText()));
-        //reserva.setData(txtData.getText()); -- Verificar com o professor
+        reserva.setData(Generics.formataData(txtData.getText()));
         reserva.setIdResponsavel((int)cbxResponsavel.getSelectedItem());
         reserva.setIdSala((int)cbxSala.getSelectedItem());
         reserva.setPeriodo(cbxPeriodo.getSelectedItem().toString());

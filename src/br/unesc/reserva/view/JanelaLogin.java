@@ -5,10 +5,14 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.Generics;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
@@ -135,7 +139,7 @@ public class JanelaLogin extends javax.swing.JFrame {
                 arq.close();
                 initComponents();
                 this.txtLogin.setText(usuario);
-                this.txtLogin.setEditable(false);
+                this.txtLogin.setEditable(true);
             } 
             catch (Exception erro) {
                 JOptionPane.showMessageDialog(null, "Erro" + erro.getMessage());
@@ -168,8 +172,13 @@ public class JanelaLogin extends javax.swing.JFrame {
            }
         
         JanelaPrincipal jp = new JanelaPrincipal();
-                         jp.setVisible(true);
-                         this.dispose();                    
+        jp.setVisible(true);
+        this.dispose();
+        try {
+            Generics.GerarLog("Entrou no sistema","");
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     public class teclasPermitidas extends PlainDocument{
