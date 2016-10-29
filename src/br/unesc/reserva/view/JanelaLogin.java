@@ -32,6 +32,7 @@ public class JanelaLogin extends javax.swing.JFrame {
 
     public JanelaLogin() {
         analizar();
+        
     }
 
     /**
@@ -138,8 +139,11 @@ public class JanelaLogin extends javax.swing.JFrame {
                 usuario = arq.readLine();
                 arq.close();
                 initComponents();
+                this.txtLogin.setDocument(new teclasletras());
                 this.txtLogin.setText(usuario);
+                this.txtLogin.setSelectionStart(txtLogin.getText().length());
                 this.txtLogin.setEditable(true);
+      
             } 
             catch (Exception erro) {
                 JOptionPane.showMessageDialog(null, "Erro" + erro.getMessage());
@@ -148,7 +152,8 @@ public class JanelaLogin extends javax.swing.JFrame {
         else
         {
             initComponents();
-            this.txtLogin.setDocument(new teclasPermitidas());             
+            txtLogin.setDocument(new teclasletras());
+                         
         }
         
     }
@@ -181,20 +186,23 @@ public class JanelaLogin extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnEntrarActionPerformed
 
-    public class teclasPermitidas extends PlainDocument{
+        public class teclasletras extends PlainDocument {
+
         @Override
-        public void insertString(int offset, String str,javax.swing.text.AttributeSet attr)
-            throws BadLocationException{
-            super.insertString(offset, str.replaceAll("[^a-z|^A-Z]",""), attr);
-       }
-        public void replace(int offset, String str,javax.swing.text.AttributeSet attr)
-            throws BadLocationException{
-            super.insertString(offset, str.replaceAll("[^a-z|^A-Z]",""), attr);
-     }
-    }
+        public void insertString(int offset, String str, javax.swing.text.AttributeSet attr)
+                throws BadLocationException {
+            super.insertString(offset, str.replaceAll("[^a-z|^A-Z]",""), attr);}}
+        
+        public class teclasnumeros extends PlainDocument {
+
+            @Override
+            public void insertString(int offset, String str, javax.swing.text.AttributeSet attr)
+                    throws BadLocationException {
+                super.insertString(offset, str.replaceAll("[^0-9]",""), attr);}}
     
+
     private void txtLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtLoginActionPerformed
-      
+        
     }//GEN-LAST:event_txtLoginActionPerformed
 
     private void txtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSenhaActionPerformed
