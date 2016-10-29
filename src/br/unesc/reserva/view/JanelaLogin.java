@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.PlainDocument;
 
@@ -176,7 +175,12 @@ public class JanelaLogin extends javax.swing.JFrame {
                 }
            }
         
-        JanelaPrincipal jp = new JanelaPrincipal();
+        JanelaPrincipal jp = null;
+        try {
+            jp = new JanelaPrincipal();
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
         jp.setVisible(true);
         this.dispose();
         
