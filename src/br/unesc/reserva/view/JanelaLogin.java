@@ -182,7 +182,8 @@ public class JanelaLogin extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     public class teclasPermitidas extends PlainDocument{
-        public void inserString(int offset, String str,javax.swing.text.AttributeSet attr)
+        @Override
+        public void insertString(int offset, String str,javax.swing.text.AttributeSet attr)
             throws BadLocationException{
             super.insertString(offset, str.replaceAll("[^a-z|^A-Z]",""), attr);
        }
