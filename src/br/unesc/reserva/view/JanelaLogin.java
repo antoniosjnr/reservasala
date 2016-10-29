@@ -218,6 +218,7 @@ public class JanelaLogin extends javax.swing.JFrame {
                 this.txtLogin.setDocument(new teclasletras());
                 this.txtLogin.setText(usuario);
                 this.txtLogin.setSelectionStart(txtLogin.getText().length());
+                this.setLocation(450,200);
                 this.txtLogin.setEditable(true);
       
             } 
@@ -228,6 +229,7 @@ public class JanelaLogin extends javax.swing.JFrame {
         else
         {
             initComponents();
+            this.setLocation(450,200);
             txtLogin.setDocument(new teclasletras());
                          
         }
