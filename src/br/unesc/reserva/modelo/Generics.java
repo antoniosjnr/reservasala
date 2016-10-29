@@ -5,6 +5,7 @@ import java.util.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 import sun.nio.cs.ext.Johab;
 
 public class Generics {
@@ -25,25 +26,41 @@ public class Generics {
 
     public static void GerarLog(String mensagem, String login) throws IOException {
 
-        String local = "..\\src\\Logs\\log.txt";
-        
-        new File(local).mkdirs();
-        
+        String arquivo = "log.txt";
+
         BufferedWriter bufferedWriter = null;
 
         try {
-            FileWriter fileWriter = new FileWriter(local, true);
+            FileWriter fileWriter = new FileWriter(arquivo, true);
             bufferedWriter = new BufferedWriter(fileWriter);
-            String data = (new java.util.Date()).toString();
-            String msg = data + " - " + login + " : " + mensagem + "\n";
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss");
+            String data = sdf.format(new java.util.Date());
+            String msg = data + " - " + login + " : " + mensagem + "\r\n";
             bufferedWriter.write(msg);
         } catch (Exception ex) {
-            //JOptionPane.showMessageDialog(null,"");                    
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro: " + ex);
 
         } finally {
             bufferedWriter.flush();
             bufferedWriter.close();
         }
 
+    }
+
+    public static String getUsuario() throws FileNotFoundException, IOException {
+        String usuario = "";
+
+        File arquivo = new File("USUARIO.txt");
+        BufferedReader arq = null;
+        try {
+            arq = new BufferedReader(new FileReader(arquivo));
+            usuario = arq.readLine();
+        } catch (Exception ex) {
+            // Tratar Exception
+        } finally {
+            arq.close();
+        }
+
+        return usuario;
     }
 }

@@ -146,7 +146,7 @@ public class JanelaLogin extends javax.swing.JFrame {
       
             } 
             catch (Exception erro) {
-                JOptionPane.showMessageDialog(null, "Erro" + erro.getMessage());
+                //Tratar Exception
             }
         }
         else
@@ -179,8 +179,16 @@ public class JanelaLogin extends javax.swing.JFrame {
         JanelaPrincipal jp = new JanelaPrincipal();
         jp.setVisible(true);
         this.dispose();
+        
+        String usuario = null;
         try {
-            Generics.GerarLog("Entrou no sistema","");
+            usuario = Generics.getUsuario();
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        try {
+            Generics.GerarLog("Entrou no sistema",usuario);
         } catch (IOException ex) {
             Logger.getLogger(JanelaLogin.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -8,6 +8,7 @@ package br.unesc.reserva.view;
 import br.unesc.reserva.modelo.Generics;
 import br.unesc.reserva.modelo.Reserva;
 import br.unesc.reserva.modelo.ReservaAction;
+import java.io.IOException;
 
 /**
  *
@@ -15,12 +16,10 @@ import br.unesc.reserva.modelo.ReservaAction;
  */
 public class JanelaIReserva extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form JanelaInserirSala
-     */
-    ReservaAction ra = new ReservaAction(this);
+    ReservaAction ra;
 
-    public JanelaIReserva() {
+    public JanelaIReserva() throws IOException {
+        this.ra = new ReservaAction(this);
         initComponents();
     }
 
@@ -67,13 +66,9 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         lblSala.setForeground(new java.awt.Color(255, 255, 255));
         lblSala.setText("Sala");
 
-        cbxSala.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         lblResponsavel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblResponsavel.setForeground(new java.awt.Color(255, 255, 255));
         lblResponsavel.setText("Responsável");
-
-        cbxResponsavel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblData.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblData.setForeground(new java.awt.Color(255, 255, 255));
@@ -207,10 +202,10 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnFecharActionPerformed
     public Reserva getReserva() throws Exception {
         Reserva reserva = new Reserva();
-        reserva.setCodigo(Integer.parseInt(txtCodigo.getText()));
+        reserva.setCodigo(Integer.valueOf(txtCodigo.getText()));
         reserva.setData(Generics.formataData(txtData.getText()));
-        reserva.setIdResponsavel((int)cbxResponsavel.getSelectedItem());
-        reserva.setIdSala((int)cbxSala.getSelectedItem());
+        reserva.setIdResponsavel(Integer.valueOf(cbxResponsavel.getSelectedItem().toString()));
+        reserva.setIdSala(Integer.valueOf(cbxSala.getSelectedItem().toString()));
         reserva.setPeriodo(cbxPeriodo.getSelectedItem().toString());
         
         return reserva;

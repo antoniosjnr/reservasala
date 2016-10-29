@@ -1,0 +1,27 @@
+28/10/2016 09:26:29 - antonio : Entrou no sistema
+28/10/2016 09:26:31 - antonio : Abriu a tela de Salas
+28/10/2016 09:26:34 - antonio : Abriu a tela de Responsáveis
+28/10/2016 09:26:36 - antonio : Abriu a tela de Reserva
+28/10/2016 09:26:50 - antonio : Entrou no sistema
+28/10/2016 09:26:53 - antonio : Abriu a tela Sobre
+28/10/2016 09:26:59 - jeff : Entrou no sistema
+28/10/2016 09:27:00 - jeff : Abriu a tela de Salas
+28/10/2016 09:27:02 - jeff : Abriu a tela de Responsáveis
+28/10/2016 09:27:05 - jeff : Abriu a tela de Reserva
+28/10/2016 09:27:08 - jeff : Abriu a tela Sobre
+28/10/2016 09:38:23 - jeff : Entrou no sistema
+28/10/2016 09:38:26 - jeff : Abriu a tela de Reserva
+28/10/2016 09:39:31 - jeff : Entrou no sistema
+28/10/2016 09:39:33 - jeff : Abriu a tela de Reserva
+28/10/2016 09:41:22 - jeff : Entrou no sistema
+28/10/2016 09:41:25 - jeff : Abriu a tela de Reserva
+28/10/2016 09:42:55 - jeff : Entrou no sistema
+28/10/2016 09:42:57 - jeff : Abriu a tela de Reserva
+28/10/2016 09:43:36 - jeff : Entrou no sistema
+28/10/2016 09:43:38 - jeff : Abriu a tela de Reserva
+28/10/2016 09:44:03 - jeff : Entrou no sistema
+28/10/2016 09:44:05 - jeff : Abriu a tela de Reserva
+28/10/2016 09:45:15 - jeff : Entrou no sistema
+28/10/2016 09:45:17 - jeff : Abriu a tela de Reserva
+28/10/2016 09:46:41 - jeff : Entrou no sistema
+28/10/2016 09:46:44 - jeff : Abriu a tela de Reserva
