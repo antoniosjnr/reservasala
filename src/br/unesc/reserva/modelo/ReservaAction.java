@@ -11,10 +11,10 @@ import javax.swing.JOptionPane;
 public class ReservaAction implements ActionListener{
 
     JanelaIReserva frame;
-    
+   
     String usuario = null;
     
-    public ReservaAction(JanelaIReserva frame) throws IOException {
+    public ReservaAction(JanelaIReserva frame){
         this.frame = frame;
         usuario = Generics.getUsuario();
     }
@@ -33,7 +33,7 @@ public class ReservaAction implements ActionListener{
             
             try {
                 System.out.println(r.getCodigo());
-                Generics.GerarLog("Cadastrou a reserva de código" + Integer.toString(r.getCodigo()),usuario);                
+                Generics.GerarLog("Criou a reserva de código" + r.getCodigo(),usuario);                
             } catch (IOException ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -43,11 +43,11 @@ public class ReservaAction implements ActionListener{
             try {
                 r = frame.getReserva();
             } catch (Exception ex) {
-                Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
-            }
+                Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);            }
             
             try {
-                Generics.GerarLog("Editou a reserva de código" + Integer.toString(r.getCodigo()),usuario);
+                System.out.println(r.getCodigo());
+                Generics.GerarLog("Editou a reserva de código" + r.getCodigo(),usuario);                
             } catch (IOException ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -60,8 +60,9 @@ public class ReservaAction implements ActionListener{
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            try {
-                Generics.GerarLog("Excluiu a reserva de código" + Integer.toString(r.getCodigo()),usuario);
+           try {
+                System.out.println(r.getCodigo());
+                Generics.GerarLog("Excluiu a reserva de código" + r.getCodigo(),usuario);                
             } catch (IOException ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -74,8 +75,9 @@ public class ReservaAction implements ActionListener{
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            try {
-                Generics.GerarLog("Consultou a reserva de código" + Integer.toString(r.getCodigo()),usuario);
+           try {
+                System.out.println(r.getCodigo());
+                Generics.GerarLog("Consultou a reserva de código" + r.getCodigo(),usuario);                
             } catch (IOException ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }

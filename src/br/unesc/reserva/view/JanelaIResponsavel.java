@@ -5,8 +5,12 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.Generics;
 import br.unesc.reserva.modelo.Responsavel;
 import br.unesc.reserva.modelo.ResponsavelAction;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -195,6 +199,11 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
+        try {
+            Generics.GerarLog("Fechou a tela de Responsáveis",Generics.getUsuario());
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaISala.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_btnCloseActionPerformed
     

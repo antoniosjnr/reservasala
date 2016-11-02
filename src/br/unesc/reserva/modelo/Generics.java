@@ -5,8 +5,9 @@ import java.util.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import sun.nio.cs.ext.Johab;
 
 public class Generics {
 
@@ -47,7 +48,7 @@ public class Generics {
 
     }
 
-    public static String getUsuario() throws FileNotFoundException, IOException {
+    public static String getUsuario(){
         String usuario = "";
 
         File arquivo = new File("USUARIO.txt");
@@ -58,7 +59,11 @@ public class Generics {
         } catch (Exception ex) {
             // Tratar Exception
         } finally {
-            arq.close();
+            try {
+                arq.close();
+            } catch (IOException ex) {
+                Logger.getLogger(Generics.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         return usuario;

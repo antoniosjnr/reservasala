@@ -9,6 +9,8 @@ import br.unesc.reserva.modelo.Generics;
 import br.unesc.reserva.modelo.Reserva;
 import br.unesc.reserva.modelo.ReservaAction;
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -198,14 +200,19 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
+        try {
+            Generics.GerarLog("Fechou a tela de Reservas",Generics.getUsuario());
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaISala.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
     public Reserva getReserva() throws Exception {
         Reserva reserva = new Reserva();
         reserva.setCodigo(Integer.valueOf(txtCodigo.getText()));
         reserva.setData(Generics.formataData(txtData.getText()));
-        reserva.setIdResponsavel(Integer.valueOf(cbxResponsavel.getSelectedItem().toString()));
-        reserva.setIdSala(Integer.valueOf(cbxSala.getSelectedItem().toString()));
+        reserva.setIdResponsavel(cbxResponsavel.getSelectedIndex());
+        reserva.setIdSala(cbxSala.getSelectedIndex());
         reserva.setPeriodo(cbxPeriodo.getSelectedItem().toString());
         
         return reserva;

@@ -1,31 +1,38 @@
-28/10/2016 09:26:29 - antonio : Entrou no sistema
-28/10/2016 09:26:31 - antonio : Abriu a tela de Salas
-28/10/2016 09:26:34 - antonio : Abriu a tela de Responsáveis
-28/10/2016 09:26:36 - antonio : Abriu a tela de Reserva
-28/10/2016 09:26:50 - antonio : Entrou no sistema
-28/10/2016 09:26:53 - antonio : Abriu a tela Sobre
-28/10/2016 09:26:59 - jeff : Entrou no sistema
-28/10/2016 09:27:00 - jeff : Abriu a tela de Salas
-28/10/2016 09:27:02 - jeff : Abriu a tela de Responsáveis
-28/10/2016 09:27:05 - jeff : Abriu a tela de Reserva
-28/10/2016 09:27:08 - jeff : Abriu a tela Sobre
-28/10/2016 09:38:23 - jeff : Entrou no sistema
-28/10/2016 09:38:26 - jeff : Abriu a tela de Reserva
-28/10/2016 09:39:31 - jeff : Entrou no sistema
-28/10/2016 09:39:33 - jeff : Abriu a tela de Reserva
-28/10/2016 09:41:22 - jeff : Entrou no sistema
-28/10/2016 09:41:25 - jeff : Abriu a tela de Reserva
-28/10/2016 09:42:55 - jeff : Entrou no sistema
-28/10/2016 09:42:57 - jeff : Abriu a tela de Reserva
-28/10/2016 09:43:36 - jeff : Entrou no sistema
-28/10/2016 09:43:38 - jeff : Abriu a tela de Reserva
-28/10/2016 09:44:03 - jeff : Entrou no sistema
-28/10/2016 09:44:05 - jeff : Abriu a tela de Reserva
-28/10/2016 09:45:15 - jeff : Entrou no sistema
-28/10/2016 09:45:17 - jeff : Abriu a tela de Reserva
-28/10/2016 09:46:41 - jeff : Entrou no sistema
-28/10/2016 09:46:44 - jeff : Abriu a tela de Reserva
-29/10/2016 08:39:13 - jefferson : Entrou no sistema
-29/10/2016 08:40:57 - jeffersonCalegari : Entrou no sistema
-29/10/2016 09:20:03 - jeffersonCalegari : Entrou no sistema
-29/10/2016 09:27:39 - jeffersoncalegari : Entrou no sistema
+02/11/2016 01:55:54 - jeffersoncalegari : Entrou no sistema
+02/11/2016 01:55:56 - jeffersoncalegari : Abriu a tela de Salas
+02/11/2016 01:55:59 - jeffersoncalegari : Criou a sala de código: 1
+02/11/2016 01:56:00 - jeffersoncalegari : Consultou a sala de código: 1
+02/11/2016 01:56:01 - jeffersoncalegari : Editou a sala de código: 1
+02/11/2016 01:56:01 - jeffersoncalegari : Excluiu a sala de código: 1
+02/11/2016 01:57:12 - jeffersoncalegari : Entrou no sistema
+02/11/2016 01:57:14 - jeffersoncalegari : Abriu a tela de Salas
+02/11/2016 01:57:18 - jeffersoncalegari : Criou a sala de código: 2
+02/11/2016 01:57:19 - jeffersoncalegari : Consultou a sala de código: 2
+02/11/2016 01:57:19 - jeffersoncalegari : Editou a sala de código: 2
+02/11/2016 01:57:20 - jeffersoncalegari : Excluiu a sala de código: 2
+02/11/2016 01:57:21 - jeffersoncalegari : Fechou a tela de Salas
+02/11/2016 02:05:29 - jeffersoncalegari : Entrou no sistema
+02/11/2016 02:05:31 - jeffersoncalegari : Abriu a tela de Salas
+02/11/2016 02:05:35 - jeffersoncalegari : Criou a sala de código: 1
+02/11/2016 02:05:36 - jeffersoncalegari : Consultou a sala de código: 1
+02/11/2016 02:05:37 - jeffersoncalegari : Editou a sala de código: 1
+02/11/2016 02:05:37 - jeffersoncalegari : Excluiu a sala de código: 1
+02/11/2016 02:05:38 - jeffersoncalegari : Fechou a tela de Salas
+02/11/2016 02:05:39 - jeffersoncalegari : Abriu a tela de Responsáveis
+02/11/2016 02:05:43 - jeffersoncalegari : Criou o responsável de código: 1
+02/11/2016 02:05:44 - jeffersoncalegari : Consultou o responsável de código: 1
+02/11/2016 02:05:44 - jeffersoncalegari : Editou o responsável de código: 1
+02/11/2016 02:05:45 - jeffersoncalegari : Excluiu o responsável de código: 1
+02/11/2016 02:05:45 - jeffersoncalegari : Fechou a tela de Responsáveis
+02/11/2016 02:05:49 - jeffersoncalegari : Abriu a tela de Reserva
+02/11/2016 02:05:54 - jeffersoncalegari : Fechou a tela de Reservas
+02/11/2016 02:06:25 - jeffersoncalegari : Entrou no sistema
+02/11/2016 02:06:27 - jeffersoncalegari : Abriu a tela de Reserva
+02/11/2016 02:06:33 - jeffersoncalegari : Fechou a tela de Reservas
+02/11/2016 02:11:58 - jeffersoncalegari : Entrou no sistema
+02/11/2016 02:11:59 - jeffersoncalegari : Abriu a tela de Reserva
+02/11/2016 02:12:02 - jeffersoncalegari : Criou a reserva de código1
+02/11/2016 02:12:02 - jeffersoncalegari : Consultou a reserva de código1
+02/11/2016 02:12:03 - jeffersoncalegari : Editou a reserva de código1
+02/11/2016 02:12:03 - jeffersoncalegari : Excluiu a reserva de código1
+02/11/2016 02:12:04 - jeffersoncalegari : Fechou a tela de Reservas

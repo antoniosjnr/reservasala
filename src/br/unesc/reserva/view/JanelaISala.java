@@ -5,8 +5,12 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.modelo.Generics;
 import br.unesc.reserva.modelo.Sala;
 import br.unesc.reserva.modelo.SalaAction;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,18 +21,11 @@ public class JanelaISala extends javax.swing.JInternalFrame {
     /**
      * Creates new form JanelaInserirSala
      */
-     
     
-    //TODO: naõ precisa destas variáveis
-    private int codigo = 0;
-    private String bloco = "";
-    private int andar = 0;
+    private SalaAction salaAction  = new SalaAction(this); 
     
-    private SalaAction salaAction = new SalaAction(this);
-    
-    
-    public JanelaISala() {
-        initComponents();
+    public JanelaISala() throws IOException {
+        initComponents();        
     }
 
     /**
@@ -166,15 +163,24 @@ public class JanelaISala extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
+        try {
+            Generics.GerarLog("Fechou a tela de Salas",Generics.getUsuario());
+        } catch (IOException ex) {
+            Logger.getLogger(JanelaISala.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
 
 
     public Sala getSala(){
+        
+        int andar = txtAndar.getText().isEmpty() ? 0 :Integer.parseInt(txtAndar.getText());
+        int codigo = txtCodigo.getText().isEmpty() ? 0 :Integer.parseInt(txtCodigo.getText());
+        
         Sala sala = new Sala();
         sala.setBloco(txtBloco.getText());
-        sala.setAndar(Integer.parseInt(txtAndar.getText()));
-        sala.setCodigo(Integer.parseInt(txtAndar.getText()));
+        sala.setAndar(andar);
+        sala.setCodigo(codigo);
         
         return sala;
     }

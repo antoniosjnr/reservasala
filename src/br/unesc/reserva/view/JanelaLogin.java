@@ -182,11 +182,7 @@ public class JanelaLogin extends javax.swing.JFrame {
         this.dispose();
 
         String usuario = null;
-        try {
-            usuario = Generics.getUsuario();
-        } catch (IOException ex) {
-            Logger.getLogger(JanelaLogin.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        usuario = Generics.getUsuario();
 
         try {
             Generics.GerarLog("Entrou no sistema",usuario);
