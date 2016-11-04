@@ -9,6 +9,7 @@ import br.unesc.reserva.modelo.Generics;
 import br.unesc.reserva.modelo.Reserva;
 import br.unesc.reserva.modelo.ReservaAction;
 import java.io.IOException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -209,8 +210,19 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnFecharActionPerformed
     public Reserva getReserva() throws Exception {
         Reserva reserva = new Reserva();
-        reserva.setCodigo(Integer.valueOf(txtCodigo.getText()));
-        reserva.setData(Generics.formataData(txtData.getText()));
+        
+        Date data = null;
+        
+        int codigo = txtCodigo.getText().isEmpty() ? 0 : Integer.valueOf(txtCodigo.getText());
+        
+        try{
+            data = Generics.formataData(txtData.getText());
+        }catch(Exception ex){
+            Generics.GerarLog("Erro ao formatar data da reserva: " + ex.toString(),Generics.getUsuario());
+        }
+        
+        reserva.setCodigo(codigo);
+        reserva.setData(data);
         reserva.setIdResponsavel(cbxResponsavel.getSelectedIndex());
         reserva.setIdSala(cbxSala.getSelectedIndex());
         reserva.setPeriodo(cbxPeriodo.getSelectedItem().toString());

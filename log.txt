@@ -36,3 +36,27 @@
 02/11/2016 02:12:03 - jeffersoncalegari : Editou a reserva de código1
 02/11/2016 02:12:03 - jeffersoncalegari : Excluiu a reserva de código1
 02/11/2016 02:12:04 - jeffersoncalegari : Fechou a tela de Reservas
+04/11/2016 12:00:14 - jefferson : Entrou no sistema
+04/11/2016 12:00:17 - jefferson : Abriu a tela de Salas
+04/11/2016 12:00:23 - jefferson : Criou a sala de código: 0
+04/11/2016 12:20:00 - jefferson : Entrou no sistema
+04/11/2016 12:20:03 - jefferson : Abriu a tela de Salas
+04/11/2016 12:20:08 - jefferson : Fechou a tela de Salas
+04/11/2016 12:20:10 - jefferson : Abriu a tela de Responsáveis
+04/11/2016 12:20:59 - jefferson : Entrou no sistema
+04/11/2016 12:21:01 - jefferson : Abriu a tela de Responsáveis
+04/11/2016 12:22:11 - jefferson : Entrou no sistema
+04/11/2016 12:22:13 - jefferson : Abriu a tela de Responsáveis
+04/11/2016 12:23:42 - jefferson : Entrou no sistema
+04/11/2016 12:23:44 - jefferson : Abriu a tela de Responsáveis
+04/11/2016 12:24:11 - jefferson : Abriu a tela de Reserva
+04/11/2016 12:25:17 - jefferson : Entrou no sistema
+04/11/2016 12:25:19 - jefferson : Abriu a tela de Reserva
+04/11/2016 12:25:20 - jefferson : Criou a reserva de código0
+04/11/2016 12:25:47 - jefferson : Editou a reserva de código0
+04/11/2016 12:25:49 - jefferson : Fechou a tela de Reservas
+04/11/2016 12:26:40 - jefferson : Entrou no sistema
+04/11/2016 12:26:43 - jefferson : Abriu a tela de Responsáveis
+04/11/2016 12:27:18 - jefferson : Editou o responsável de código: 0
+04/11/2016 12:27:21 - jefferson : Editou o responsável de código: 0
+04/11/2016 12:27:21 - jefferson : Fechou a tela de Responsáveis

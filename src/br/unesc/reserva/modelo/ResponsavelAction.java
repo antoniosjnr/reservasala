@@ -13,7 +13,7 @@ public class ResponsavelAction implements ActionListener {
     JanelaIResponsavel frame;
     private String login;
 
-    public ResponsavelAction(JanelaIResponsavel frame){
+    public ResponsavelAction(JanelaIResponsavel frame) {
         this.frame = frame;
         login = Generics.getUsuario();
     }
@@ -23,20 +23,28 @@ public class ResponsavelAction implements ActionListener {
 
         if ("salvar".equals(e.getActionCommand())) {
             Responsavel r = frame.getResponsavel();
-            try {
-                Generics.GerarLog("Criou o responsável de código: " + r.getCodigo(), login);
-            } catch (IOException ex) {
-                Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (isValid(r)) {
+                try {
+                    Generics.GerarLog("Criou o responsável de código: " + r.getCodigo(), login);
+                } catch (IOException ex) {
+                    Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
+
         }
 
         if ("editar".equals(e.getActionCommand())) {
             Responsavel r = frame.getResponsavel();
-            try {
-                Generics.GerarLog("Editou o responsável de código: " + r.getCodigo(), login);
-            } catch (IOException ex) {
-                Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (isValid(r)) {
+                try {
+                    Generics.GerarLog("Editou o responsável de código: " + r.getCodigo(), login);
+                } catch (IOException ex) {
+                    Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
+
         }
 
         if ("excluir".equals(e.getActionCommand())) {
@@ -56,5 +64,32 @@ public class ResponsavelAction implements ActionListener {
                 Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+    }
+
+    private boolean isValid(Responsavel responsavel) {
+
+        String mensagem = "";
+        boolean isValid = true;
+
+        if (responsavel.getCPF().isEmpty()) {
+            mensagem += " > Informe o cpf! \n";
+            isValid = false;
+        }
+
+        if (responsavel.getNome().isEmpty()) {
+            mensagem += " > Informe o nome! \n";
+            isValid = false;
+        }
+
+        if (responsavel.getEmail().isEmpty() && responsavel.getTelefone().isEmpty()) {
+            mensagem += " > Informe o e-mail ou telefone para contato! \n";
+            isValid = false;
+        }
+        
+        if(!isValid){
+            JOptionPane.showMessageDialog(frame,mensagem);
+        }
+
+        return isValid;
     }
 }

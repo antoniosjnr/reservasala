@@ -6,58 +6,74 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
-public class SalaAction implements ActionListener{
-    
+public class SalaAction implements ActionListener {
+
     private JanelaISala frame;
     private String login;
-    
+
     public SalaAction(JanelaISala frame) throws IOException {
         this.frame = frame;
         login = Generics.getUsuario();
-    }   
-    
-    
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        if("salvar".equals(e.getActionCommand())){
+
+        if ("salvar".equals(e.getActionCommand())) {
             // inicialização dos componentes
             Sala s = frame.getSala();
+
+            if (isValid(s)) {
+                try {
+                    Generics.GerarLog("Criou a sala de código: " + s.getCodigo(), login);
+                } catch (IOException ex) {
+                    Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+
+        }
+
+        if ("editar".equals(e.getActionCommand())) {
+            Sala s = frame.getSala();
+
+            if (isValid(s)) {
+                try {
+                    Generics.GerarLog("Editou a sala de código: " + s.getCodigo(), login);
+                } catch (IOException ex) {
+                    Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+
+        if ("excluir".equals(e.getActionCommand())) {
+            Sala s = frame.getSala();
             try {
-                Generics.GerarLog("Criou a sala de código: " + s.getCodigo(),login);
+                Generics.GerarLog("Excluiu a sala de código: " + s.getCodigo(), login);
             } catch (IOException ex) {
                 Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
-        
-        if("editar".equals(e.getActionCommand())){            
+
+        if ("consultar".equals(e.getActionCommand())) {
             Sala s = frame.getSala();
             try {
-                Generics.GerarLog("Editou a sala de código: " + s.getCodigo(),login);
+                Generics.GerarLog("Consultou a sala de código: " + s.getCodigo(), login);
             } catch (IOException ex) {
                 Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
         }
-        
-        if("excluir".equals(e.getActionCommand())){
-            Sala s = frame.getSala();
-            try {
-                Generics.GerarLog("Excluiu a sala de código: " + s.getCodigo(),login);
-            } catch (IOException ex) {
-                Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
-            }           
+    }
+
+    private boolean isValid(Sala sala) {
+        String mensagem = "";
+
+        if (sala.getAndar() == 0) {
+            mensagem += " > Informe o andar da sala! \n";
+            JOptionPane.showMessageDialog(frame, mensagem);
+            return false;
         }
-        
-        if("consultar".equals(e.getActionCommand())){
-            Sala s = frame.getSala();
-            try {
-                Generics.GerarLog("Consultou a sala de código: " + s.getCodigo(),login);
-            } catch (IOException ex) {
-                Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
-            }  
-        }
+        return true;
     }
 }

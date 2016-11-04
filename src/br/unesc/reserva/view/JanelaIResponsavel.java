@@ -208,9 +208,12 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCloseActionPerformed
     
     public Responsavel getResponsavel(){
+        
         Responsavel responsavel = new Responsavel();
+        
+        int codigo = txtCodigo.getText().isEmpty() ? 0 : Integer.parseInt(txtCodigo.getText());
         responsavel.setCPF(txtCPF.getText());
-        responsavel.setCodigo(Integer.parseInt(txtCodigo.getText()));
+        responsavel.setCodigo(codigo);
         responsavel.setEmail(txtEmail.getText());
         responsavel.setNome(txtNome.getText());
         responsavel.setTelefone(txtTelefone.getText());
