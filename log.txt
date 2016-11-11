@@ -60,3 +60,4 @@
 04/11/2016 12:27:18 - jefferson : Editou o responsável de código: 0
 04/11/2016 12:27:21 - jefferson : Editou o responsável de código: 0
 04/11/2016 12:27:21 - jefferson : Fechou a tela de Responsáveis
+11/11/2016 07:36:17 - jefferson : Entrou no sistema
