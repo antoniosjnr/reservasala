@@ -1,7 +1,7 @@
 package br.unesc.reserva.modelo;
 
 import java.io.*;
-import java.util.*;
+import java.sql.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -18,7 +18,7 @@ public class Generics {
         Date date = null;
         try {
             DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
-            date = (java.util.Date) formatter.parse(data);
+            date = (java.sql.Date) formatter.parse(data);
         } catch (ParseException e) {
             throw e;
         }

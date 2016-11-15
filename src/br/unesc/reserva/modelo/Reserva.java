@@ -1,6 +1,6 @@
 package br.unesc.reserva.modelo;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Reserva {
     private int codigo;
