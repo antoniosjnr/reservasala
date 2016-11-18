@@ -1,7 +1,6 @@
 package br.unesc.reserva.dao;
 
 import br.unesc.reserva.modelo.Reserva;
-import br.unesc.reserva.modelo.Responsavel;
 import br.unesc.reserva.modelo.ResponsavelCombo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
