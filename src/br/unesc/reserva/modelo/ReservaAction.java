@@ -1,5 +1,6 @@
 package br.unesc.reserva.modelo;
 
+import br.unesc.reserva.dao.ReservaDAO;
 import br.unesc.reserva.view.JanelaIReserva;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +28,9 @@ public class ReservaAction implements ActionListener {
         if ("salvar".equals(e.getActionCommand())) {
             try {
                 r = frame.getReserva();
+                ReservaDAO dao = new ReservaDAO();
+                dao.insert(r);
+                
             } catch (Exception ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }

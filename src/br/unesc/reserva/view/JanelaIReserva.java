@@ -5,11 +5,16 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.dao.ReservaDAO;
 import br.unesc.reserva.modelo.Generics;
 import br.unesc.reserva.modelo.Reserva;
 import br.unesc.reserva.modelo.ReservaAction;
+import br.unesc.reserva.modelo.Responsavel;
+import br.unesc.reserva.modelo.ResponsavelCombo;
 import java.io.IOException;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,9 +26,25 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
 
     ReservaAction ra;
 
+    ReservaDAO dao = new ReservaDAO();
+
+    List<String> listaSalas = new ArrayList<>();
+    List<ResponsavelCombo> listResponsavel = new ArrayList<>();
+    List<String> nomesResponsavel = new ArrayList<>();
+
     public JanelaIReserva() throws IOException {
         this.ra = new ReservaAction(this);
+        listaSalas = dao.getSalas();
+        listResponsavel = dao.getResponsavel();
+        
+        for(ResponsavelCombo resp: listResponsavel){
+            nomesResponsavel.add(resp.getNome());
+        }        
+        
         initComponents();
+        
+        
+
     }
 
     /**
@@ -69,9 +90,13 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         lblSala.setForeground(new java.awt.Color(255, 255, 255));
         lblSala.setText("Sala");
 
+        cbxSala.setModel(new javax.swing.DefaultComboBoxModel(listaSalas.toArray()));
+
         lblResponsavel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblResponsavel.setForeground(new java.awt.Color(255, 255, 255));
         lblResponsavel.setText("Responsável");
+
+        cbxResponsavel.setModel(new javax.swing.DefaultComboBoxModel(nomesResponsavel.toArray()));
 
         lblData.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lblData.setForeground(new java.awt.Color(255, 255, 255));
@@ -202,7 +227,7 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
         try {
-            Generics.GerarLog("Fechou a tela de Reservas",Generics.getUsuario());
+            Generics.GerarLog("Fechou a tela de Reservas", Generics.getUsuario());
         } catch (IOException ex) {
             Logger.getLogger(JanelaISala.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -210,25 +235,26 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnFecharActionPerformed
     public Reserva getReserva() throws Exception {
         Reserva reserva = new Reserva();
-        
+
         Date data = null;
-        
+
         int codigo = txtCodigo.getText().isEmpty() ? 0 : Integer.valueOf(txtCodigo.getText());
-        
-        try{
+
+        try {
             data = Generics.formataData(txtData.getText());
-        }catch(Exception ex){
-            Generics.GerarLog("Erro ao formatar data da reserva: " + ex.toString(),Generics.getUsuario());
+        } catch (Exception ex) {
+            Generics.GerarLog("Erro ao formatar data da reserva: " + ex.toString(), Generics.getUsuario());
         }
-        
+
         reserva.setCodigo(codigo);
         reserva.setData(data);
         reserva.setIdResponsavel(cbxResponsavel.getSelectedIndex());
         reserva.setIdSala(cbxSala.getSelectedIndex());
         reserva.setPeriodo(cbxPeriodo.getSelectedItem().toString());
-        
+
         return reserva;
     }
+
     /**
      * @param args the command line arguments
      */
