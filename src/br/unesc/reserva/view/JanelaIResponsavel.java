@@ -5,12 +5,15 @@
  */
 package br.unesc.reserva.view;
 
+import br.unesc.reserva.dao.ReservaDAO;
 import br.unesc.reserva.modelo.Generics;
 import br.unesc.reserva.modelo.Responsavel;
 import br.unesc.reserva.modelo.ResponsavelAction;
 import java.io.IOException;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 
 /**
  *

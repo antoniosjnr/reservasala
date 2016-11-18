@@ -178,10 +178,13 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxSala">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="0"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel(listaSalas.toArray())" type="code"/>
             </Property>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox()"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="lblResponsavel">
           <Properties>
@@ -196,8 +199,8 @@
         </Component>
         <Component class="javax.swing.JComboBox" name="cbxResponsavel">
           <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="0"/>
+            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.DefaultComboBoxModel(nomesResponsavel.toArray())" type="code"/>
             </Property>
           </Properties>
         </Component>

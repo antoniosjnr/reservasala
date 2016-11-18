@@ -62,3 +62,22 @@
 04/11/2016 12:27:21 - jefferson : Fechou a tela de Responsáveis
 11/11/2016 07:36:17 - jefferson : Entrou no sistema
 15/11/2016 03:21:03 - antonio : Entrou no sistema
+18/11/2016 07:09:46 - teste : Entrou no sistema
+18/11/2016 07:09:52 - teste : Abriu a tela de Reserva
+18/11/2016 07:09:56 - teste : Fechou a tela de Reservas
+18/11/2016 07:10:00 - teste : Abriu a tela de Salas
+18/11/2016 07:10:03 - teste : Fechou a tela de Salas
+18/11/2016 09:20:10 -  : Entrou no sistema
+18/11/2016 09:20:21 -  : Abriu a tela de Reserva
+18/11/2016 09:21:34 - antonio : Entrou no sistema
+18/11/2016 09:21:57 - antonio : Abriu a tela de Reserva
+18/11/2016 09:22:00 - antonio : Fechou a tela de Reservas
+18/11/2016 09:23:42 - antonio : Entrou no sistema
+18/11/2016 09:24:53 -  : Entrou no sistema
+18/11/2016 09:24:56 -  : Abriu a tela de Reserva
+18/11/2016 09:25:02 -  : Fechou a tela de Reservas
+18/11/2016 09:36:29 -  : Entrou no sistema
+18/11/2016 09:36:36 -  : Abriu a tela de Responsáveis
+18/11/2016 09:36:39 -  : Fechou a tela de Responsáveis
+18/11/2016 09:36:41 -  : Abriu a tela de Reserva
+18/11/2016 09:36:45 -  : Fechou a tela de Reservas

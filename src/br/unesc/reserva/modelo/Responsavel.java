@@ -2,17 +2,17 @@ package br.unesc.reserva.modelo;
 
 public class Responsavel {
 
-    private int codigo;
+    private Integer codigo;
     private String CPF;
     private String email;
     private String nome;
     private String telefone;
 
-    public int getCodigo() {
+    public Integer getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
 
