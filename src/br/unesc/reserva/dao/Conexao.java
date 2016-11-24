@@ -14,7 +14,7 @@ public class Conexao {
         } catch (SQLException e) {
             System.out.println("Problemas ao conectar no banco de dados");
         } catch (ClassNotFoundException e) {
-            System.out.println("O driver não foi configurado corretametne");
+            System.out.println("O driver não foi configurado corretamente");
         }
 
         return conn;
