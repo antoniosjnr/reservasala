@@ -81,3 +81,57 @@
 18/11/2016 09:36:39 -  : Fechou a tela de Responsáveis
 18/11/2016 09:36:41 -  : Abriu a tela de Reserva
 18/11/2016 09:36:45 -  : Fechou a tela de Reservas
+20/11/2016 11:56:32 - antonio : Entrou no sistema
+20/11/2016 11:56:35 - antonio : Abriu a tela de Reserva
+20/11/2016 11:56:46 - antonio : Fechou a tela de Reservas
+20/11/2016 11:57:02 -  : Entrou no sistema
+20/11/2016 11:57:05 -  : Abriu a tela de Reserva
+20/11/2016 11:57:26 -  : Erro ao formatar data da reserva: java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+20/11/2016 11:57:26 -  : Criou a reserva de código2
+20/11/2016 11:58:09 -  : Fechou a tela de Reservas
+25/11/2016 12:26:01 - antonio : Entrou no sistema
+25/11/2016 12:26:04 - antonio : Abriu a tela de Reserva
+25/11/2016 12:26:17 - antonio : Erro ao formatar data da reserva: java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+25/11/2016 12:26:17 - antonio : Criou a reserva de código1
+25/11/2016 12:28:36 -  : Entrou no sistema
+25/11/2016 12:28:39 -  : Abriu a tela de Reserva
+25/11/2016 12:28:59 -  : Erro ao formatar data da reserva: java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+25/11/2016 12:33:15 -  : Entrou no sistema
+25/11/2016 12:33:18 -  : Abriu a tela de Reserva
+25/11/2016 12:33:35 -  : Erro ao formatar data da reserva: java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+25/11/2016 12:33:35 -  : Criou a reserva de código0
+25/11/2016 12:46:25 -  : Entrou no sistema
+25/11/2016 12:46:28 -  : Abriu a tela de Reserva
+25/11/2016 12:51:45 -  : Entrou no sistema
+25/11/2016 12:51:47 -  : Abriu a tela de Reserva
+25/11/2016 12:52:11 -  : Erro ao formatar data da reserva: java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+25/11/2016 12:52:55 -  : Entrou no sistema
+25/11/2016 12:52:58 -  : Abriu a tela de Reserva
+25/11/2016 12:54:17 -  : Entrou no sistema
+25/11/2016 12:54:19 -  : Abriu a tela de Reserva
+25/11/2016 12:54:30 -  : Erro ao formatar data da reserva: java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+25/11/2016 12:54:30 -  : Criou a reserva de código0
+25/11/2016 12:55:00 -  : Entrou no sistema
+25/11/2016 12:55:04 -  : Abriu a tela de Reserva
+25/11/2016 12:58:55 -  : Entrou no sistema
+25/11/2016 12:58:57 -  : Abriu a tela de Reserva
+25/11/2016 01:00:02 -  : Erro ao formatar data da reserva: java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+25/11/2016 06:30:45 -  : Entrou no sistema
+25/11/2016 06:30:48 -  : Abriu a tela de Reserva
+25/11/2016 06:31:10 -  : Erro ao formatar data da reserva: java.lang.ClassCastException: java.util.Date cannot be cast to java.sql.Date
+25/11/2016 06:31:10 -  : Criou a reserva de código0
+25/11/2016 06:33:04 -  : Entrou no sistema
+25/11/2016 06:33:06 -  : Abriu a tela de Reserva
+25/11/2016 06:37:45 -  : Entrou no sistema
+25/11/2016 06:37:48 -  : Abriu a tela de Reserva
+25/11/2016 06:39:17 -  : Criou a reserva de código0
+25/11/2016 06:39:39 -  : Entrou no sistema
+25/11/2016 06:39:42 -  : Abriu a tela de Reserva
+25/11/2016 06:39:48 -  : Criou a reserva de código0
+25/11/2016 06:39:51 -  : Fechou a tela de Reservas
+25/11/2016 07:21:57 -  : Entrou no sistema
+25/11/2016 07:22:00 -  : Abriu a tela de Reserva
+25/11/2016 07:22:14 -  : Criou a reserva de código0
+25/11/2016 07:23:12 -  : Consultou a reserva de código3
+25/11/2016 07:23:15 -  : Consultou a reserva de código2
+25/11/2016 07:23:20 -  : Consultou a reserva de código1

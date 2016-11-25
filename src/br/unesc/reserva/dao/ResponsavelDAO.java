@@ -154,7 +154,7 @@ public class ResponsavelDAO {
         }
     }
 
-    public Responsavel getProduto(Integer codigo) {
+    public Responsavel getResponsavel(Integer codigo) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {

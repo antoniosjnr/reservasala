@@ -17,34 +17,33 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Antônio
  */
 public class JanelaIReserva extends javax.swing.JInternalFrame {
-
+    
     ReservaAction ra;
-
+    
     ReservaDAO dao = new ReservaDAO();
-
+    
     List<String> listaSalas = new ArrayList<>();
     List<ResponsavelCombo> listResponsavel = new ArrayList<>();
     List<String> nomesResponsavel = new ArrayList<>();
-
+    
     public JanelaIReserva() throws IOException {
         this.ra = new ReservaAction(this);
         listaSalas = dao.getSalas();
         listResponsavel = dao.getResponsavel();
         
-        for(ResponsavelCombo resp: listResponsavel){
+        for (ResponsavelCombo resp : listResponsavel) {
             nomesResponsavel.add(resp.getNome());
         }        
         
         initComponents();
         
-        
-
     }
 
     /**
@@ -115,6 +114,11 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         btnConsultar.setText("Consultar");
         btnConsultar.addActionListener(ra);
         btnConsultar.setActionCommand("consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         btnEditar.setText("Editar");
         btnEditar.addActionListener(ra);
@@ -233,26 +237,91 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         }
         this.dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        setReserva();
+    }//GEN-LAST:event_btnConsultarActionPerformed
     public Reserva getReserva() throws Exception {
         Reserva reserva = new Reserva();
-
+        
         Date data = null;
-
+        
         int codigo = txtCodigo.getText().isEmpty() ? 0 : Integer.valueOf(txtCodigo.getText());
-
+        
         try {
             data = Generics.formataData(txtData.getText());
         } catch (Exception ex) {
             Generics.GerarLog("Erro ao formatar data da reserva: " + ex.toString(), Generics.getUsuario());
         }
-
+        
         reserva.setCodigo(codigo);
         reserva.setData(data);
-        reserva.setIdResponsavel(cbxResponsavel.getSelectedIndex());
-        reserva.setIdSala(cbxSala.getSelectedIndex());
-        reserva.setPeriodo(cbxPeriodo.getSelectedItem().toString());
-
+        reserva.setIdResponsavel(cbxResponsavel.getSelectedIndex() + 1);
+        reserva.setIdSala(cbxSala.getSelectedIndex() + 1);
+        
+        switch (cbxPeriodo.getSelectedIndex()) {
+            case 0:
+                reserva.setPeriodo("Matutino");
+                break;
+            case 1:
+                reserva.setPeriodo("Vespertino");
+                break;
+            case 2:
+                reserva.setPeriodo("Noturno");
+                break;
+            default:
+                break;
+        }
+            
+        
+                
+        
+        
         return reserva;
+    }
+    
+    public void setReserva() {
+        
+        if (txtCodigo.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Necessário informar código da reserva para realizar consulta!");
+            return;
+        }
+        
+        int codigo = Integer.parseInt(txtCodigo.getText());
+        
+        Reserva r = null;
+        
+        ReservaDAO dao = new ReservaDAO();
+        
+        r = dao.getReserva(codigo);
+        
+        if (r == null) {
+            JOptionPane.showMessageDialog(null, "Reserva não encontrada!");
+            return;
+        }
+        
+        txtCodigo.setText(String.valueOf(r.getCodigo()));
+        cbxSala.setSelectedIndex(r.getIdSala()-1);
+        cbxResponsavel.setSelectedIndex(r.getIdResponsavel()-1);
+        
+        int periodo = 0;
+        
+        switch (r.getPeriodo()) {
+            case "Matutino":
+                periodo = 0;
+                break;
+            case "Vespertino":
+                periodo = 1;
+                break;
+            case "Noturno":
+                periodo = 2;
+                break;
+            default:
+                break;
+        }
+        
+        cbxPeriodo.setSelectedIndex(periodo);
+        
     }
 
     /**

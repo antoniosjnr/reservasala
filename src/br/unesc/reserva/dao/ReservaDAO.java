@@ -15,7 +15,7 @@ public class ReservaDAO {
     private final String UPDATE = "update reserva set id_sala = ?, id_responsavel = ?, data = ?, periodo = ? where codigo = ?";
     private final String DELETE = "delete from reserva where codigo = ?";
     private final String GET_RESERVA = "select * from reserva where codigo = ?";
-    private final String GET_CODIGORESERVA = "select coalesce(max(codigo),0) from reserva";
+    private final String GET_CODIGORESERVA = "select max(codigo) from reserva";
     private final String LISTA_SALA = "select codigo from sala";
     private final String LISTA_RESPONSAVEL = "select codigo, nome from responsavel";
 
@@ -144,7 +144,7 @@ public class ReservaDAO {
         }
     }
 
-    public Reserva getProduto(Integer codigo) {
+    public Reserva getReserva(Integer codigo) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {

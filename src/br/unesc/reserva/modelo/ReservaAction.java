@@ -41,6 +41,8 @@ public class ReservaAction implements ActionListener {
             } catch (IOException ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            JOptionPane.showMessageDialog(null,"Cadastro realizado com sucesso!");
         }
 
         if ("editar".equals(e.getActionCommand())) {
