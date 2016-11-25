@@ -14,6 +14,7 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -97,6 +98,11 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
         btnConsultar.setText("Consultar");
         btnConsultar.addActionListener(ra);
         btnConsultar.setActionCommand("consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(ra);
@@ -127,7 +133,7 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
                         .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(painelFundoLayout.createSequentialGroup()
                                 .addComponent(lblEmail)
-                                .addGap(0, 152, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(txtEmail)))
                     .addComponent(txtNome)
                     .addGroup(painelFundoLayout.createSequentialGroup()
@@ -209,6 +215,10 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
         }
         this.dispose();
     }//GEN-LAST:event_btnCloseActionPerformed
+
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultarActionPerformed
     
     public Responsavel getResponsavel(){
         
@@ -223,6 +233,40 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
         
         return responsavel;
     }
+    
+    public void setReserva() throws Exception {
+        
+        if (txtCodigo.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Necessário informar código da reserva para realizar consulta!");
+            return;
+        }
+        
+        Responsavel r = new Responsavel();
+        
+        r = ra.setResponsavel(getResponsavel());
+        
+        if (r == null) {
+            JOptionPane.showMessageDialog(null, "Reserva não encontrada!");
+            return;
+        }
+        
+        txtCodigo.setText(String.valueOf(r.getCodigo()));
+        txtCPF.setText(r.getCPF());
+        txtEmail.setText(r.getEmail());
+        txtNome.setText(r.getNome());
+        txtTelefone.setText(r.getTelefone());
+        
+        
+    }
+    
+    public void limparCampos(){
+        txtCodigo.setText("");
+       txtCPF.setText("");
+       txtEmail.setText("");
+       txtNome.setText("");
+       txtTelefone.setText("");
+    }
+    
     /**
      * @param args the command line arguments
      */    

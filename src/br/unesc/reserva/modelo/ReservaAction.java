@@ -14,6 +14,8 @@ public class ReservaAction implements ActionListener {
     JanelaIReserva frame;
 
     String usuario = null;
+    
+    ReservaDAO dao = new ReservaDAO();
 
     public ReservaAction(JanelaIReserva frame) {
         this.frame = frame;
@@ -27,9 +29,9 @@ public class ReservaAction implements ActionListener {
 
         if ("salvar".equals(e.getActionCommand())) {
             try {
-                r = frame.getReserva();
-                ReservaDAO dao = new ReservaDAO();
+                r = frame.getReserva();                
                 dao.insert(r);
+                frame.limpaCampos();
                 
             } catch (Exception ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
@@ -48,6 +50,9 @@ public class ReservaAction implements ActionListener {
         if ("editar".equals(e.getActionCommand())) {
             try {
                 r = frame.getReserva();
+                dao.update(r);
+                JOptionPane.showMessageDialog(null,"Reserva alterada com sucesso!");
+                frame.limpaCampos();
             } catch (Exception ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -63,6 +68,9 @@ public class ReservaAction implements ActionListener {
         if ("excluir".equals(e.getActionCommand())) {
             try {
                 r = frame.getReserva();
+                dao.delete(r);
+                JOptionPane.showMessageDialog(null,"Reserva excluida com sucesso!");
+                frame.limpaCampos();
             } catch (Exception ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -78,6 +86,7 @@ public class ReservaAction implements ActionListener {
         if ("consultar".equals(e.getActionCommand())) {
             try {
                 r = frame.getReserva();
+                        
             } catch (Exception ex) {
                 Logger.getLogger(ReservaAction.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -121,5 +130,9 @@ public class ReservaAction implements ActionListener {
         }
 
         return isValid;
+    }
+    
+    public Reserva getReserva(Reserva r){
+        return dao.getReserva(r.getCodigo());         
     }
 }

@@ -135,3 +135,87 @@
 25/11/2016 07:23:12 -  : Consultou a reserva de código3
 25/11/2016 07:23:15 -  : Consultou a reserva de código2
 25/11/2016 07:23:20 -  : Consultou a reserva de código1
+25/11/2016 05:43:03 -  : Entrou no sistema
+25/11/2016 05:43:06 -  : Abriu a tela de Reserva
+25/11/2016 05:43:16 -  : Consultou a reserva de código3
+25/11/2016 05:43:21 -  : Consultou a reserva de código2
+25/11/2016 05:43:24 -  : Consultou a reserva de código1
+25/11/2016 05:53:32 -  : Entrou no sistema
+25/11/2016 05:53:39 -  : Abriu a tela de Reserva
+25/11/2016 05:53:44 -  : Consultou a reserva de código3
+25/11/2016 05:53:48 -  : Consultou a reserva de código2
+25/11/2016 05:53:49 -  : Fechou a tela de Reservas
+25/11/2016 05:54:36 -  : Entrou no sistema
+25/11/2016 05:54:38 -  : Abriu a tela de Reserva
+25/11/2016 05:54:44 -  : Consultou a reserva de código2
+25/11/2016 05:54:49 -  : Consultou a reserva de código3
+25/11/2016 05:54:53 -  : Excluiu a reserva de código3
+25/11/2016 05:54:59 -  : Consultou a reserva de código3
+25/11/2016 05:56:06 -  : Entrou no sistema
+25/11/2016 05:56:09 -  : Abriu a tela de Reserva
+25/11/2016 05:56:11 -  : Consultou a reserva de código2
+25/11/2016 05:56:17 -  : Editou a reserva de código2
+25/11/2016 05:56:22 -  : Consultou a reserva de código1
+25/11/2016 05:56:23 -  : Consultou a reserva de código1
+25/11/2016 05:56:28 -  : Consultou a reserva de código2
+25/11/2016 05:56:34 -  : Consultou a reserva de código3
+25/11/2016 05:56:49 -  : Excluiu a reserva de código3
+25/11/2016 05:57:12 -  : Fechou a tela de Reservas
+25/11/2016 05:58:02 -  : Entrou no sistema
+25/11/2016 05:58:06 -  : Abriu a tela de Reserva
+25/11/2016 05:58:08 -  : Criou a reserva de código0
+25/11/2016 05:58:21 -  : Criou a reserva de código0
+25/11/2016 06:00:02 -  : Entrou no sistema
+25/11/2016 06:00:04 -  : Abriu a tela de Reserva
+25/11/2016 06:00:07 -  : Criou a reserva de código0
+25/11/2016 06:00:57 -  : Entrou no sistema
+25/11/2016 06:01:01 -  : Abriu a tela de Reserva
+25/11/2016 06:01:02 -  : Criou a reserva de código0
+25/11/2016 06:03:55 -  : Entrou no sistema
+25/11/2016 06:03:58 -  : Abriu a tela de Reserva
+25/11/2016 06:05:46 -  : Entrou no sistema
+25/11/2016 06:11:02 -  : Entrou no sistema
+25/11/2016 06:11:07 -  : Abriu a tela de Reserva
+25/11/2016 06:11:13 -  : Fechou a tela de Reservas
+25/11/2016 06:12:32 -  : Entrou no sistema
+25/11/2016 06:12:35 -  : Abriu a tela de Reserva
+25/11/2016 06:12:43 -  : Criou a reserva de código0
+25/11/2016 06:12:51 -  : Criou a reserva de código0
+25/11/2016 06:13:00 -  : Criou a reserva de código0
+25/11/2016 06:13:31 -  : Consultou a reserva de código1
+25/11/2016 06:14:09 -  : Entrou no sistema
+25/11/2016 06:14:12 -  : Abriu a tela de Reserva
+25/11/2016 06:14:16 -  : Criou a reserva de código0
+25/11/2016 06:14:23 -  : Criou a reserva de código0
+25/11/2016 06:14:31 -  : Criou a reserva de código0
+25/11/2016 06:14:45 -  : Consultou a reserva de código2
+25/11/2016 06:14:58 -  : Editou a reserva de código2
+25/11/2016 06:16:00 -  : Editou a reserva de código2
+25/11/2016 06:22:28 -  : Entrou no sistema
+25/11/2016 06:22:30 -  : Abriu a tela de Reserva
+25/11/2016 06:22:37 -  : Consultou a reserva de código1
+25/11/2016 06:22:45 -  : Editou a reserva de código1
+25/11/2016 06:24:06 -  : Entrou no sistema
+25/11/2016 06:24:09 -  : Abriu a tela de Reserva
+25/11/2016 06:24:11 -  : Consultou a reserva de código2
+25/11/2016 06:26:25 -  : Entrou no sistema
+25/11/2016 06:26:27 -  : Abriu a tela de Reserva
+25/11/2016 06:26:30 -  : Consultou a reserva de código3
+25/11/2016 06:26:39 -  : Editou a reserva de código3
+25/11/2016 06:37:28 -  : Entrou no sistema
+25/11/2016 06:37:30 -  : Abriu a tela de Responsáveis
+25/11/2016 06:46:33 -  : Entrou no sistema
+25/11/2016 06:46:37 -  : Abriu a tela de Responsáveis
+25/11/2016 06:46:53 -  : Criou o responsável de código: 
+25/11/2016 06:48:43 -  : Entrou no sistema
+25/11/2016 06:48:47 -  : Abriu a tela de Responsáveis
+25/11/2016 06:48:59 -  : Criou o responsável de código: 
+25/11/2016 06:51:38 -  : Entrou no sistema
+25/11/2016 06:51:40 -  : Abriu a tela de Responsáveis
+25/11/2016 06:51:54 -  : Criou o responsável de código: 
+25/11/2016 06:54:25 -  : Entrou no sistema
+25/11/2016 06:54:28 -  : Abriu a tela de Responsáveis
+25/11/2016 06:54:45 -  : Criou o responsável de código: 
+25/11/2016 06:55:20 -  : Criou o responsável de código: 
+25/11/2016 06:55:34 -  : Consultou o responsável de código: 1
+25/11/2016 06:55:35 -  : Consultou o responsável de código: 1

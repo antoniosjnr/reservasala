@@ -1,5 +1,6 @@
 package br.unesc.reserva.modelo;
 
+import br.unesc.reserva.dao.ResponsavelDAO;
 import br.unesc.reserva.view.JanelaIResponsavel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,8 @@ public class ResponsavelAction implements ActionListener {
 
     JanelaIResponsavel frame;
     private String login;
+    
+    ResponsavelDAO dao = new ResponsavelDAO();
 
     public ResponsavelAction(JanelaIResponsavel frame) {
         this.frame = frame;
@@ -23,10 +26,12 @@ public class ResponsavelAction implements ActionListener {
 
         if ("salvar".equals(e.getActionCommand())) {
             Responsavel r = frame.getResponsavel();
+            dao.insert(r);
+            JOptionPane.showMessageDialog(null,"Responsável incluído com sucesso!");
 
             if (isValid(r)) {
                 try {
-                    Generics.GerarLog("Criou o responsável de código: " + r.getCodigo(), login);
+                    Generics.GerarLog("Criou o responsável de código: ", login);
                 } catch (IOException ex) {
                     Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -36,6 +41,9 @@ public class ResponsavelAction implements ActionListener {
 
         if ("editar".equals(e.getActionCommand())) {
             Responsavel r = frame.getResponsavel();
+            
+            dao.update(r);
+            JOptionPane.showMessageDialog(null,"Responsavel editado com sucesso!");
 
             if (isValid(r)) {
                 try {
@@ -49,6 +57,9 @@ public class ResponsavelAction implements ActionListener {
 
         if ("excluir".equals(e.getActionCommand())) {
             Responsavel r = frame.getResponsavel();
+            
+            dao.delete(r);
+            JOptionPane.showMessageDialog(null,"Responsavel excluido com sucesso!");
             try {
                 Generics.GerarLog("Excluiu o responsável de código: " + r.getCodigo(), login);
             } catch (IOException ex) {
@@ -91,5 +102,11 @@ public class ResponsavelAction implements ActionListener {
         }
 
         return isValid;
+    }
+    
+    public Responsavel setResponsavel(Responsavel responsavel){
+        
+       return dao.getResponsavel(responsavel.getCodigo());
+        
     }
 }

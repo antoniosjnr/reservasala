@@ -127,6 +127,11 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         btnExcluir.setText("Excluir");
         btnExcluir.addActionListener(ra);
         btnExcluir.setActionCommand("excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         btnFechar.setText("Fechar");
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
@@ -238,8 +243,21 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         this.dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
 
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        ReservaDAO dao = new ReservaDAO();
+        try {
+            dao.delete(getReserva());
+        } catch (Exception ex) {
+            Logger.getLogger(JanelaIReserva.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        setReserva();
+        try {
+            setReserva();
+        } catch (Exception ex) {
+            Logger.getLogger(JanelaIReserva.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnConsultarActionPerformed
     public Reserva getReserva() throws Exception {
         Reserva reserva = new Reserva();
@@ -256,8 +274,8 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         
         reserva.setCodigo(codigo);
         reserva.setData(data);
-        reserva.setIdResponsavel(cbxResponsavel.getSelectedIndex() + 1);
-        reserva.setIdSala(cbxSala.getSelectedIndex() + 1);
+        reserva.setIdResponsavel(listResponsavel.get(cbxResponsavel.getSelectedIndex()).getCodigo());
+        reserva.setIdSala(Integer.parseInt(listaSalas.get(cbxSala.getSelectedIndex())));
         
         switch (cbxPeriodo.getSelectedIndex()) {
             case 0:
@@ -280,20 +298,16 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         return reserva;
     }
     
-    public void setReserva() {
+    public void setReserva() throws Exception {
         
         if (txtCodigo.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Necessário informar código da reserva para realizar consulta!");
             return;
         }
         
-        int codigo = Integer.parseInt(txtCodigo.getText());
+        Reserva r = new Reserva();
         
-        Reserva r = null;
-        
-        ReservaDAO dao = new ReservaDAO();
-        
-        r = dao.getReserva(codigo);
+        r = ra.getReserva(getReserva());
         
         if (r == null) {
             JOptionPane.showMessageDialog(null, "Reserva não encontrada!");
@@ -322,6 +336,14 @@ public class JanelaIReserva extends javax.swing.JInternalFrame {
         
         cbxPeriodo.setSelectedIndex(periodo);
         
+    }
+    
+    public void limpaCampos(){
+        txtCodigo.setText("");
+        cbxSala.setSelectedIndex(0);
+        cbxResponsavel.setSelectedIndex(0);
+        txtData.setText("");
+        cbxPeriodo.setSelectedIndex(0);
     }
 
     /**

@@ -5,28 +5,22 @@
  */
 package br.unesc.reserva.dao;
 
-import br.unesc.reserva.modelo.Reserva;
 import br.unesc.reserva.modelo.Responsavel;
-import br.unesc.reserva.modelo.ResponsavelCombo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  *
  * @author jeff
  */
 public class ResponsavelDAO { 
-    private final String INSERT = "insert into reserva (codigo,id_sala,id_responsavel,data,periodo) values(?,?,?,?,?)";
-    private final String UPDATE = "update reserva set id_sala = ?, id_responsavel = ?, data = ?, periodo = ? where codigo = ?";
-    private final String DELETE = "delete from reserva where codigo = ?";
-    private final String GET_RESERVA = "select * from reserva where codigo = ?";
-    private final String GET_CODIGORESERVA = "select coalesce(max(codigo),0) from reserva";
-    private final String LISTA_SALA = "select codigo from sala";
-    private final String LISTA_RESPONSAVEL = "select codigo, nome from responsavel";
+    private final String INSERT = "insert into responsavel values(?,?,?,?,?)";
+    private final String UPDATE = "update responsavel set  cpf = '?', nome = '?', telefone = '?', email= '?'";
+    private final String DELETE = "delete from responsavel where codigo = ?";
+    private final String GET_RESPONSAVEL = "select * from responsavel where codigo = ?";
+    private final String GET_CODIGORESPONSAVEL = "select codigo from responsavel order by codigo desc limit 1";
     
         public void insert(Responsavel responsavel) {
                  Connection conn = null;
@@ -34,7 +28,7 @@ public class ResponsavelDAO {
         try {
             conn = Conexao.getConnection();
             ps = conn.prepareStatement(INSERT);
-            ps.setInt(1, responsavel.getCodigo());
+            ps.setInt(1, getCodigo() == null ? 1 : getCodigo());
             ps.setString(2, responsavel.getCPF());
             ps.setString(3, responsavel.getEmail());
             ps.setString(4, responsavel.getNome());
@@ -159,7 +153,7 @@ public class ResponsavelDAO {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            ps = conn.prepareStatement(GET_RESERVA);
+            ps = conn.prepareStatement(GET_RESPONSAVEL);
             ps.setInt(1, codigo);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
@@ -198,12 +192,12 @@ public class ResponsavelDAO {
         PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
-            ps = conn.prepareStatement(GET_CODIGORESERVA);
+            ps = conn.prepareStatement(GET_CODIGORESPONSAVEL);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
 
                 int codigo = rs.getInt(1);
-                return codigo++;
+                return codigo + 1;
             }
         } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());
@@ -224,40 +218,5 @@ public class ResponsavelDAO {
             }
         }
         return null;
-    }
-
-    public List<String> getReservas() {
-        Connection conn = null;
-        PreparedStatement ps = null;
-
-        List<String> reservas = new ArrayList<>();
-
-        try {
-            conn = Conexao.getConnection();
-            ps = conn.prepareStatement(LISTA_SALA);
-            ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
-                reservas.add(String.valueOf(rs.getInt(1)));
-            }
-            return reservas;
-        } catch (SQLException e) {
-            System.out.println("ERRO: " + e.getMessage());
-        } finally {
-            if (ps != null) {
-                try {
-                    ps.close();
-                } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
-                }
-            }
-            if (conn != null) {
-                try {
-                    conn.close();
-                } catch (SQLException ex) {
-                    System.out.println("ERRO: " + ex.getMessage());
-                }
-            }
-        }
-        return null;
-    }
+    }    
  }

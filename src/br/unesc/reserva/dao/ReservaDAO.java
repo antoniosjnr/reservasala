@@ -15,7 +15,7 @@ public class ReservaDAO {
     private final String UPDATE = "update reserva set id_sala = ?, id_responsavel = ?, data = ?, periodo = ? where codigo = ?";
     private final String DELETE = "delete from reserva where codigo = ?";
     private final String GET_RESERVA = "select * from reserva where codigo = ?";
-    private final String GET_CODIGORESERVA = "select max(codigo) from reserva";
+    private final String GET_CODIGORESERVA = "select codigo from reserva order by codigo desc limit 1";
     private final String LISTA_SALA = "select codigo from sala";
     private final String LISTA_RESPONSAVEL = "select codigo, nome from responsavel";
 
@@ -25,7 +25,7 @@ public class ReservaDAO {
         try {
             conn = Conexao.getConnection();
             ps = conn.prepareStatement(INSERT);
-            ps.setInt(1, getCodigo());
+            ps.setInt(1, getCodigo() == null ? 1 : getCodigo());
             ps.setInt(2, reserva.getIdSala());
             ps.setInt(3, reserva.getIdResponsavel());
             ps.setDate(4, reserva.getData());
@@ -73,6 +73,7 @@ public class ReservaDAO {
             ps.setInt(2, reserva.getIdResponsavel());
             ps.setDate(3, reserva.getData());
             ps.setString(4, reserva.getPeriodo());
+            ps.setInt(5, reserva.getCodigo());            
             ps.execute();
 
             conn.commit();
@@ -159,7 +160,6 @@ public class ReservaDAO {
                 r.setIdResponsavel(rs.getInt(3));
                 r.setData(rs.getDate(4));
                 r.setPeriodo(rs.getString(5));
-
                 return r;
             }
         } catch (SQLException e) {
@@ -193,7 +193,7 @@ public class ReservaDAO {
             if (rs.next()) {
 
                 int codigo = rs.getInt(1);
-                return codigo++;
+                return codigo + 1;
             }
         } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());
@@ -226,10 +226,10 @@ public class ReservaDAO {
             conn = Conexao.getConnection();
             ps = conn.prepareStatement(LISTA_SALA);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
+            while(rs.next()) {
                 listaSala.add(String.valueOf(rs.getInt(1)));
             }
-            return listaSala;
+            
         } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());
         } finally {
@@ -248,7 +248,7 @@ public class ReservaDAO {
                 }
             }
         }
-        return null;
+        return listaSala;
     }
     
     public List<ResponsavelCombo> getResponsavel() {
@@ -261,13 +261,13 @@ public class ReservaDAO {
             conn = Conexao.getConnection();
             ps = conn.prepareStatement(LISTA_RESPONSAVEL);
             ResultSet rs = ps.executeQuery();
-            if (rs.next()) {
+            while(rs.next()) {
                 ResponsavelCombo r = new ResponsavelCombo();
                 r.setCodigo(rs.getInt(1));
                 r.setNome(rs.getString(2));                
                 listaResponsaveis.add(r);
             }
-            return listaResponsaveis;
+            
         } catch (SQLException e) {
             System.out.println("ERRO: " + e.getMessage());
         } finally {
@@ -286,7 +286,7 @@ public class ReservaDAO {
                 }
             }
         }
-        return null;
+        return listaResponsaveis;
     }
 
 }
