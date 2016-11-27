@@ -217,7 +217,11 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_btnCloseActionPerformed
 
     private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
-        // TODO add your handling code here:
+        try {
+            setResponsavel();
+        } catch (Exception ex) {
+            Logger.getLogger(JanelaIResponsavel.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btnConsultarActionPerformed
     
     public Responsavel getResponsavel(){
@@ -234,16 +238,16 @@ public class JanelaIResponsavel extends javax.swing.JInternalFrame {
         return responsavel;
     }
     
-    public void setReserva() throws Exception {
+    public void setResponsavel() throws Exception {
         
         if (txtCodigo.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Necessário informar código da reserva para realizar consulta!");
             return;
         }
         
-        Responsavel r = new Responsavel();
+        Responsavel r = null;
         
-        r = ra.setResponsavel(getResponsavel());
+        r = ra.getResponsavel(getResponsavel());
         
         if (r == null) {
             JOptionPane.showMessageDialog(null, "Reserva não encontrada!");

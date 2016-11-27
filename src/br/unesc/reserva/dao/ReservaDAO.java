@@ -18,6 +18,7 @@ public class ReservaDAO {
     private final String GET_CODIGORESERVA = "select codigo from reserva order by codigo desc limit 1";
     private final String LISTA_SALA = "select codigo from sala";
     private final String LISTA_RESPONSAVEL = "select codigo, nome from responsavel";
+    private final String CONTAINS_RESERVA = "select codigo from reserva where id_sala = ? and data = ? and periodo = ?";
 
     public void insert(Reserva reserva) {
         Connection conn = null;

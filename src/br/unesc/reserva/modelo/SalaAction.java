@@ -1,5 +1,6 @@
 package br.unesc.reserva.modelo;
 
+import br.unesc.reserva.dao.SalaDAO;
 import br.unesc.reserva.view.JanelaISala;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,6 +13,8 @@ public class SalaAction implements ActionListener {
 
     private JanelaISala frame;
     private String login;
+    
+    SalaDAO dao = new SalaDAO();
 
     public SalaAction(JanelaISala frame) throws IOException {
         this.frame = frame;
@@ -27,6 +30,8 @@ public class SalaAction implements ActionListener {
 
             if (isValid(s)) {
                 try {
+                    dao.insert(s);
+                    JOptionPane.showMessageDialog(null,"Sala inserida com sucesso!");
                     Generics.GerarLog("Criou a sala de código: " + s.getCodigo(), login);
                 } catch (IOException ex) {
                     Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
@@ -40,6 +45,8 @@ public class SalaAction implements ActionListener {
 
             if (isValid(s)) {
                 try {
+                    dao.update(s);
+                    JOptionPane.showMessageDialog(null,"Sala editada com sucesso!");
                     Generics.GerarLog("Editou a sala de código: " + s.getCodigo(), login);
                 } catch (IOException ex) {
                     Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
@@ -50,6 +57,8 @@ public class SalaAction implements ActionListener {
         if ("excluir".equals(e.getActionCommand())) {
             Sala s = frame.getSala();
             try {
+                dao.delete(s);
+                JOptionPane.showMessageDialog(null,"Sala excluida com sucesso!");
                 Generics.GerarLog("Excluiu a sala de código: " + s.getCodigo(), login);
             } catch (IOException ex) {
                 Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
@@ -75,5 +84,11 @@ public class SalaAction implements ActionListener {
             return false;
         }
         return true;
+    }
+    
+    public Sala getSala(Sala sala) {
+
+        return dao.getSala(sala.getCodigo());
+
     }
 }

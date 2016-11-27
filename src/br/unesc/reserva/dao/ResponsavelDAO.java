@@ -15,16 +15,17 @@ import java.sql.SQLException;
  *
  * @author jeff
  */
-public class ResponsavelDAO { 
+public class ResponsavelDAO {
+
     private final String INSERT = "insert into responsavel values(?,?,?,?,?)";
-    private final String UPDATE = "update responsavel set  cpf = '?', nome = '?', telefone = '?', email= '?'";
+    private final String UPDATE = "update responsavel set  cpf = ?, nome = ?, telefone = ?, email= ? where codigo = ?";
     private final String DELETE = "delete from responsavel where codigo = ?";
     private final String GET_RESPONSAVEL = "select * from responsavel where codigo = ?";
     private final String GET_CODIGORESPONSAVEL = "select codigo from responsavel order by codigo desc limit 1";
-    
-        public void insert(Responsavel responsavel) {
-                 Connection conn = null;
-                  PreparedStatement ps = null;
+
+    public void insert(Responsavel responsavel) {
+        Connection conn = null;
+        PreparedStatement ps = null;
         try {
             conn = Conexao.getConnection();
             ps = conn.prepareStatement(INSERT);
@@ -72,11 +73,12 @@ public class ResponsavelDAO {
         try {
             conn = Conexao.getConnection();
             ps = conn.prepareStatement(UPDATE);
-            ps.setInt(1, responsavel.getCodigo());
-            ps.setString(2, responsavel.getCPF());
-            ps.setString(3, responsavel.getEmail());
-            ps.setString(4, responsavel.getNome());
-            ps.setString(5, responsavel.getTelefone());
+            ps.setString(1, responsavel.getCPF());
+            ps.setString(2, responsavel.getNome());
+            ps.setString(3, responsavel.getTelefone());
+            ps.setString(4, responsavel.getEmail());
+            ps.setInt(5, responsavel.getCodigo());
+            
             ps.execute();
 
             conn.commit();
@@ -158,12 +160,12 @@ public class ResponsavelDAO {
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
                 Responsavel r = new Responsavel();
-                
-           r.setCodigo(r.getCodigo());
-           r.setCPF(r.getCPF());
-           r.setEmail(r.getEmail());
-           r.setNome(r.getNome());
-           r.setTelefone(r.getTelefone());
+
+                r.setCodigo(rs.getInt(1));
+                r.setCPF(rs.getString(2));
+                r.setEmail(rs.getString(3));
+                r.setNome(rs.getString(4));
+                r.setTelefone(rs.getString(5));
                 return r;
             }
         } catch (SQLException e) {
@@ -218,5 +220,5 @@ public class ResponsavelDAO {
             }
         }
         return null;
-    }    
- }
+    }
+}

@@ -219,3 +219,121 @@
 25/11/2016 06:55:20 -  : Criou o responsável de código: 
 25/11/2016 06:55:34 -  : Consultou o responsável de código: 1
 25/11/2016 06:55:35 -  : Consultou o responsável de código: 1
+25/11/2016 07:15:03 - antonio : Entrou no sistema
+25/11/2016 07:15:06 - antonio : Abriu a tela de Reserva
+25/11/2016 07:15:11 - antonio : Fechou a tela de Reservas
+26/11/2016 03:55:03 -  : Entrou no sistema
+26/11/2016 03:56:34 -  : Abriu a tela de Reserva
+27/11/2016 01:56:03 -  : Entrou no sistema
+27/11/2016 01:56:13 -  : Abriu a tela de Responsáveis
+27/11/2016 01:57:34 -  : Criou o responsável de código: 
+27/11/2016 01:58:05 -  : Fechou a tela de Responsáveis
+27/11/2016 01:58:09 -  : Abriu a tela de Responsáveis
+27/11/2016 01:58:13 -  : Consultou o responsável de código: 1
+27/11/2016 01:58:55 -  : Consultou o responsável de código: 1
+27/11/2016 01:59:24 -  : Consultou o responsável de código: 1
+27/11/2016 01:59:29 -  : Fechou a tela de Responsáveis
+27/11/2016 02:09:55 -  : Entrou no sistema
+27/11/2016 02:09:58 -  : Abriu a tela de Responsáveis
+27/11/2016 02:10:02 -  : Consultou o responsável de código: 1
+27/11/2016 02:11:10 -  : Entrou no sistema
+27/11/2016 02:11:17 -  : Abriu a tela de Responsáveis
+27/11/2016 02:11:33 -  : Fechou a tela de Responsáveis
+27/11/2016 02:12:05 -  : Entrou no sistema
+27/11/2016 02:12:09 -  : Abriu a tela de Responsáveis
+27/11/2016 02:16:01 -  : Entrou no sistema
+27/11/2016 02:16:03 -  : Abriu a tela de Responsáveis
+27/11/2016 02:19:00 -  : Entrou no sistema
+27/11/2016 02:19:03 -  : Abriu a tela de Responsáveis
+27/11/2016 02:19:09 -  : Consultou o responsável de código: 1
+27/11/2016 02:19:14 -  : Fechou a tela de Responsáveis
+27/11/2016 02:19:16 -  : Abriu a tela de Responsáveis
+27/11/2016 02:19:19 -  : Consultou o responsável de código: 1
+27/11/2016 02:19:23 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:24 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:24 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:24 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:25 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:25 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:25 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:25 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:26 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:26 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:26 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:26 -  : Consultou o responsável de código: 2
+27/11/2016 02:19:27 -  : Fechou a tela de Responsáveis
+27/11/2016 02:19:33 -  : Abriu a tela de Salas
+27/11/2016 02:19:34 -  : Fechou a tela de Salas
+27/11/2016 02:19:36 -  : Abriu a tela de Responsáveis
+27/11/2016 02:19:46 -  : Consultou o responsável de código: 1
+27/11/2016 02:19:48 -  : Fechou a tela de Responsáveis
+27/11/2016 02:20:55 -  : Entrou no sistema
+27/11/2016 02:21:01 -  : Abriu a tela de Responsáveis
+27/11/2016 02:21:07 -  : Consultou o responsável de código: 1
+27/11/2016 02:21:15 -  : Consultou o responsável de código: 2
+27/11/2016 02:21:17 -  : Fechou a tela de Responsáveis
+27/11/2016 02:22:06 -  : Entrou no sistema
+27/11/2016 02:27:56 -  : Entrou no sistema
+27/11/2016 02:27:59 -  : Abriu a tela de Responsáveis
+27/11/2016 02:28:02 -  : Consultou o responsável de código: 1
+27/11/2016 02:28:05 -  : Fechou a tela de Responsáveis
+27/11/2016 02:28:08 -  : Abriu a tela de Responsáveis
+27/11/2016 02:28:12 -  : Excluiu o responsável de código: 1
+27/11/2016 02:28:15 -  : Consultou o responsável de código: 1
+27/11/2016 02:28:22 -  : Criou o responsável de código: 
+27/11/2016 02:28:31 -  : Editou o responsável de código: 1
+27/11/2016 02:28:52 -  : Consultou o responsável de código: 1
+27/11/2016 02:30:14 -  : Entrou no sistema
+27/11/2016 02:30:20 -  : Abriu a tela de Responsáveis
+27/11/2016 02:30:24 -  : Consultou o responsável de código: 0
+27/11/2016 02:30:31 -  : Consultou o responsável de código: 1
+27/11/2016 02:30:48 -  : Editou o responsável de código: 1
+27/11/2016 02:31:01 -  : Consultou o responsável de código: 1
+27/11/2016 02:32:17 -  : Entrou no sistema
+27/11/2016 02:32:21 -  : Abriu a tela de Responsáveis
+27/11/2016 02:32:32 -  : Consultou o responsável de código: 1
+27/11/2016 02:32:39 -  : Consultou o responsável de código: 1
+27/11/2016 02:32:52 -  : Editou o responsável de código: 1
+27/11/2016 02:33:15 -  : Consultou o responsável de código: 1
+27/11/2016 02:34:28 -  : Entrou no sistema
+27/11/2016 02:34:36 -  : Abriu a tela de Responsáveis
+27/11/2016 02:34:51 -  : Consultou o responsável de código: 1
+27/11/2016 02:35:02 -  : Editou o responsável de código: 1
+27/11/2016 02:38:58 -  : Entrou no sistema
+27/11/2016 02:39:02 -  : Abriu a tela de Responsáveis
+27/11/2016 02:39:05 -  : Consultou o responsável de código: 1
+27/11/2016 02:39:30 -  : Criou o responsável de código: 
+27/11/2016 02:39:51 -  : Consultou o responsável de código: 1
+27/11/2016 02:41:51 -  : Entrou no sistema
+27/11/2016 02:42:01 -  : Abriu a tela de Responsáveis
+27/11/2016 02:42:07 -  : Consultou o responsável de código: 2
+27/11/2016 02:42:26 -  : Editou o responsável de código: 2
+27/11/2016 02:43:25 -  : Fechou a tela de Responsáveis
+27/11/2016 02:46:37 -  : Entrou no sistema
+27/11/2016 02:46:40 -  : Abriu a tela de Responsáveis
+27/11/2016 02:46:44 -  : Consultou o responsável de código: 2
+27/11/2016 02:46:59 -  : Editou o responsável de código: 2
+27/11/2016 02:52:33 -  : Entrou no sistema
+27/11/2016 02:52:36 -  : Abriu a tela de Responsáveis
+27/11/2016 02:52:39 -  : Consultou o responsável de código: 1
+27/11/2016 02:52:45 -  : Editou o responsável de código: 1
+27/11/2016 04:17:43 -  : Entrou no sistema
+27/11/2016 04:58:57 -  : Entrou no sistema
+27/11/2016 04:59:20 -  : Abriu a tela de Salas
+27/11/2016 04:59:32 -  : Consultou a sala de código: 1
+27/11/2016 04:59:51 -  : Criou a sala de código: 0
+27/11/2016 05:00:38 -  : Entrou no sistema
+27/11/2016 05:00:41 -  : Abriu a tela de Salas
+27/11/2016 05:01:47 -  : Criou a sala de código: 0
+27/11/2016 05:03:31 -  : Entrou no sistema
+27/11/2016 05:03:51 -  : Abriu a tela de Salas
+27/11/2016 05:05:31 -  : Criou a sala de código: 0
+27/11/2016 05:07:36 -  : Entrou no sistema
+27/11/2016 05:10:07 -  : Entrou no sistema
+27/11/2016 05:10:11 -  : Abriu a tela de Salas
+27/11/2016 05:10:22 -  : Consultou a sala de código: 1
+27/11/2016 05:10:35 -  : Editou a sala de código: 1
+27/11/2016 05:10:37 -  : Consultou a sala de código: 1
+27/11/2016 05:10:38 -  : Consultou a sala de código: 1
+27/11/2016 05:11:02 -  : Excluiu a sala de código: 1
+27/11/2016 05:12:12 -  : Fechou a tela de Salas

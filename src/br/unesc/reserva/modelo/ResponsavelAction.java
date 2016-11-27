@@ -12,8 +12,8 @@ import javax.swing.JOptionPane;
 public class ResponsavelAction implements ActionListener {
 
     JanelaIResponsavel frame;
-    private String login;
-    
+    private final String login;
+
     ResponsavelDAO dao = new ResponsavelDAO();
 
     public ResponsavelAction(JanelaIResponsavel frame) {
@@ -26,11 +26,12 @@ public class ResponsavelAction implements ActionListener {
 
         if ("salvar".equals(e.getActionCommand())) {
             Responsavel r = frame.getResponsavel();
-            dao.insert(r);
-            JOptionPane.showMessageDialog(null,"Responsável incluído com sucesso!");
 
             if (isValid(r)) {
                 try {
+                    dao.insert(r);
+                    JOptionPane.showMessageDialog(null, "Responsável incluído com sucesso!");
+
                     Generics.GerarLog("Criou o responsável de código: ", login);
                 } catch (IOException ex) {
                     Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,12 +42,15 @@ public class ResponsavelAction implements ActionListener {
 
         if ("editar".equals(e.getActionCommand())) {
             Responsavel r = frame.getResponsavel();
-            
+
             dao.update(r);
-            JOptionPane.showMessageDialog(null,"Responsavel editado com sucesso!");
+            JOptionPane.showMessageDialog(null, "Responsavel editado com sucesso!");
 
             if (isValid(r)) {
                 try {
+                    dao.insert(r);
+                    JOptionPane.showMessageDialog(null, "Responsável incluído com sucesso!");
+
                     Generics.GerarLog("Editou o responsável de código: " + r.getCodigo(), login);
                 } catch (IOException ex) {
                     Logger.getLogger(SalaAction.class.getName()).log(Level.SEVERE, null, ex);
@@ -57,9 +61,10 @@ public class ResponsavelAction implements ActionListener {
 
         if ("excluir".equals(e.getActionCommand())) {
             Responsavel r = frame.getResponsavel();
-            
+
             dao.delete(r);
-            JOptionPane.showMessageDialog(null,"Responsavel excluido com sucesso!");
+
+            JOptionPane.showMessageDialog(null, "Responsavel excluido com sucesso!");
             try {
                 Generics.GerarLog("Excluiu o responsável de código: " + r.getCodigo(), login);
             } catch (IOException ex) {
@@ -96,17 +101,17 @@ public class ResponsavelAction implements ActionListener {
             mensagem += " > Informe o e-mail ou telefone para contato! \n";
             isValid = false;
         }
-        
-        if(!isValid){
-            JOptionPane.showMessageDialog(frame,mensagem);
+
+        if (!isValid) {
+            JOptionPane.showMessageDialog(frame, mensagem);
         }
 
         return isValid;
     }
-    
-    public Responsavel setResponsavel(Responsavel responsavel){
-        
-       return dao.getResponsavel(responsavel.getCodigo());
-        
+
+    public Responsavel getResponsavel(Responsavel responsavel) {
+
+        return dao.getResponsavel(responsavel.getCodigo());
+
     }
 }

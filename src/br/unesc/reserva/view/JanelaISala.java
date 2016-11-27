@@ -11,6 +11,7 @@ import br.unesc.reserva.modelo.SalaAction;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,11 +22,10 @@ public class JanelaISala extends javax.swing.JInternalFrame {
     /**
      * Creates new form JanelaInserirSala
      */
-    
-    private SalaAction salaAction  = new SalaAction(this); 
-    
+    private SalaAction salaAction = new SalaAction(this);
+
     public JanelaISala() throws IOException {
-        initComponents();        
+        initComponents();
     }
 
     /**
@@ -86,6 +86,11 @@ public class JanelaISala extends javax.swing.JInternalFrame {
         btnConsultar.setText("Consultar");
         btnConsultar.addActionListener(salaAction);
         btnConsultar.setActionCommand("consultar");
+        btnConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultarActionPerformed(evt);
+            }
+        });
 
         btnFechar.setText("Fechar");
         btnFechar.addActionListener(new java.awt.event.ActionListener() {
@@ -164,30 +169,52 @@ public class JanelaISala extends javax.swing.JInternalFrame {
 
     private void btnFecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFecharActionPerformed
         try {
-            Generics.GerarLog("Fechou a tela de Salas",Generics.getUsuario());
+            Generics.GerarLog("Fechou a tela de Salas", Generics.getUsuario());
         } catch (IOException ex) {
             Logger.getLogger(JanelaISala.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.dispose();
     }//GEN-LAST:event_btnFecharActionPerformed
 
+    private void btnConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultarActionPerformed
+        setSala();
+    }//GEN-LAST:event_btnConsultarActionPerformed
 
-    public Sala getSala(){
-        
-        int andar = txtAndar.getText().isEmpty() ? 0 :Integer.parseInt(txtAndar.getText());
-        int codigo = txtCodigo.getText().isEmpty() ? 0 :Integer.parseInt(txtCodigo.getText());
-        
+    public Sala getSala() {
+
+        int andar = txtAndar.getText().isEmpty() ? 0 : Integer.parseInt(txtAndar.getText());
+        int codigo = txtCodigo.getText().isEmpty() ? 0 : Integer.parseInt(txtCodigo.getText());
+
         Sala sala = new Sala();
         sala.setBloco(txtBloco.getText());
         sala.setAndar(andar);
         sala.setCodigo(codigo);
-        
+
         return sala;
     }
-    
+
+    public void setSala() {
+
+        Sala s = salaAction.getSala(getSala());
+
+        if (txtCodigo.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Necessário informar código da sala para realizar consulta!");
+            return;
+        }
+
+        if (s == null) {
+            JOptionPane.showMessageDialog(null, "Sala não encontrada");
+            return;
+        }
+        
+        txtCodigo.setText(String.valueOf(s.getCodigo()));
+        txtBloco.setText(s.getBloco());
+        txtAndar.setText(String.valueOf(s.getAndar()));
+    }
+
     /**
      * @param args the command line arguments
-     */    
+     */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnConsultar;
